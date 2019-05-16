@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,20 @@ namespace CVO_QuizClub
 {
     public enum Specialisatie
     {
+        [Description("Film en Muziek")]
         FilmEnMuziek,
+
+        [Description("Sport")]
         Sport,
+
+        [Description("Actualiteit")]
         Actualiteit,
+
+        [Description("Wetenschappen")]
         Wetenschappen,
-        Cultuur
+
+        [Description("Cultuur")]
+        Cultuur,
     }
    
 
