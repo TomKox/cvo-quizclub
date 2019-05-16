@@ -11,18 +11,10 @@ namespace CVO_QuizClub
     {
         [Description("Film en Muziek")]
         FilmEnMuziek,
-
-        [Description("Sport")]
         Sport,
-
-        [Description("Actualiteit")]
         Actualiteit,
-
-        [Description("Wetenschappen")]
         Wetenschappen,
-
-        [Description("Cultuur")]
-        Cultuur,
+        Cultuur
     }
    
 
@@ -41,7 +33,7 @@ namespace CVO_QuizClub
 
         public override string ToString()
         {
-            return $"{base.ToString()} ({Specialisatie})" ;
+            return $"{base.ToString()} ({Specialisatie.GetDescription()})" ;
         }
     }
 }
