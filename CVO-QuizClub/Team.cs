@@ -57,5 +57,16 @@ namespace CVO_QuizClub
             }
             return verwijderd;
         }
+
+        public override string ToString()
+        {
+            StringBuilder teamleden = new StringBuilder();
+            foreach(Lid l in Leden)
+            {
+                teamleden.Append(l.ToString() + ", ");
+            }
+            teamleden.Remove(teamleden.Length - 2, 2);
+            return $"Team '{Naam}' ({Id}): " + teamleden;
+        }
     }
 }
