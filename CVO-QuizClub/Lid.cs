@@ -20,7 +20,7 @@ namespace CVO_QuizClub
 
     public class Lid : Persoon
     {
-        private static int _teller = 0;
+        private static int _teller = 1;
         public int Nummer { get; set; }
         public Specialisatie Specialisatie { get; set; }
         public int Teller { get { return _teller; } }
@@ -28,7 +28,7 @@ namespace CVO_QuizClub
         public Lid(string voornaam, string familienaam, Geslacht geslacht, DateTime geboortedatum, Specialisatie specialisatie) : base (voornaam, familienaam, geslacht, geboortedatum)
         {
             Specialisatie = specialisatie;
-            _teller++;
+            Nummer = _teller++;
         }
 
         public override string ToString()
