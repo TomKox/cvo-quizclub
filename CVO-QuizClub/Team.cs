@@ -24,6 +24,14 @@ namespace CVO_QuizClub
             _leden = new Lid[4];
         }
 
+        public Team(string naam, int id)
+        {
+            Naam = naam;
+            _id = id;
+            _teller++;
+            _leden = new Lid[4];
+        }
+
         public void LidToevoegen(Lid lid)
         {
             bool toegevoegd = false;
