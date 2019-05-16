@@ -28,5 +28,20 @@ namespace CVO_QuizClub
                 return leeftijd;
             }
         }
+        public string VolledigeNaam
+        {
+            get
+            {
+                return Voornaam + " " + Familienaam;
+            }
+        }
+
+        public Persoon (string voornaam, string familienaam, Geslacht geslacht, DateTime geboortedatum)
+        {
+            Voornaam = voornaam;
+            Familienaam = familienaam;
+            Geslacht = geslacht;
+            Geboortedatum = geboortedatum;
+        }
     }
 }
