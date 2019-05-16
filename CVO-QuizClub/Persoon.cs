@@ -43,5 +43,10 @@ namespace CVO_QuizClub
             Geslacht = geslacht;
             Geboortedatum = geboortedatum;
         }
+
+        public override string ToString()
+        {
+            return Familienaam + ", " + Voornaam;
+        }
     }
 }
