@@ -20,6 +20,40 @@ namespace CVO_QuizClub
             _teams = new List<Team>();
         }
 
+        public void LidToevoegen(Lid lid)
+        {
+            _leden.Add(lid);
+        }
+
+        public void TeamToevoegen(Team team)
+        {
+            _teams.Add(team);
+        }
+
+        public void LidToevoegenAanTeam(Lid lid, Team team)
+        {
+            if (Leden.Contains(lid) && Teams.Contains(team))
+            {
+                team.LidToevoegen(lid);
+            }
+            else
+            {
+                throw new Exception("Lid of Team onbekend");
+            }
+        }
+
+        public void LidVerwijderenUitTeam(Lid lid, Team team)
+        {
+            if (Leden.Contains(lid) && Teams.Contains(team))
+            {
+                team.LidVerwijderen(lid);
+            }
+            else
+            {
+                throw new Exception("Lid of Team onbekend");
+            }
+        }
+
 
     }
 }
