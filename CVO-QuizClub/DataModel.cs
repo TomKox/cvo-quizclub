@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CVO_QuizClub.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -80,8 +81,10 @@ namespace CVO_QuizClub
                     specialisatie = s;
                 }
             }
-            Lid lid = new Lid(voornaam, familienaam, geslacht, geboortedatum, specialisatie);
-            lid.Nummer = Convert.ToInt32(nummer);
+            Lid lid = new Lid(voornaam, familienaam, geslacht, geboortedatum, specialisatie)
+            {
+                Nummer = Convert.ToInt32(nummer)
+            };
 
             _leden.Add(lid);
         }
@@ -185,7 +188,14 @@ namespace CVO_QuizClub
             }
             else
             {
-                throw new Exception("Lid of Team onbekend");
+                if(!Leden.Contains(lid))
+                {
+                    throw new LidOnbekendException();
+                }
+                if(!Teams.Contains(team))
+                {
+                    throw new TeamOnbekendException();
+                }
             }
         }
 
@@ -198,7 +208,14 @@ namespace CVO_QuizClub
             }
             else
             {
-                throw new Exception("Lid of Team onbekend");
+                if (!Leden.Contains(lid))
+                {
+                    throw new LidOnbekendException();
+                }
+                if (!Teams.Contains(team))
+                {
+                    throw new TeamOnbekendException();
+                }
             }
         }
     }
