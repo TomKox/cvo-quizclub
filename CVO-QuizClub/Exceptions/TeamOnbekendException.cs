@@ -12,8 +12,17 @@ namespace CVO_QuizClub.Exceptions
         {
         }
 
+        public TeamOnbekendException(Team team) : base(CreateMessage(team))
+        {
+        }
+
         public TeamOnbekendException(string message) : base(message)
         {
+        }
+
+        private static string CreateMessage(Team team)
+        {
+            return $"Het team '{team.Naam}' ({team.Id}) is onbekend in het datamodel.";
         }
 
     }

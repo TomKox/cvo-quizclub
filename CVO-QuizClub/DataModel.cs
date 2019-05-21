@@ -190,11 +190,11 @@ namespace CVO_QuizClub
             {
                 if(!Leden.Contains(lid))
                 {
-                    throw new LidOnbekendException();
+                    throw new LidOnbekendException(lid);
                 }
                 if(!Teams.Contains(team))
                 {
-                    throw new TeamOnbekendException();
+                    throw new TeamOnbekendException(team);
                 }
             }
         }
@@ -210,11 +210,11 @@ namespace CVO_QuizClub
             {
                 if (!Leden.Contains(lid))
                 {
-                    throw new LidOnbekendException();
+                    throw new LidOnbekendException(lid);
                 }
                 if (!Teams.Contains(team))
                 {
-                    throw new TeamOnbekendException();
+                    throw new TeamOnbekendException(team);
                 }
             }
         }

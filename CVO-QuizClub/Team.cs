@@ -48,7 +48,7 @@ namespace CVO_QuizClub
 
             if(!toegevoegd)
             {
-                throw new TeamVolzetException();
+                throw new TeamVolzetException(this);
             }
         }
 

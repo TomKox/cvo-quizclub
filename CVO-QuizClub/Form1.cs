@@ -18,7 +18,7 @@ namespace CVO_QuizClub
         {
             DataModel = new DataModel();
 
-            /* TESTDATA
+            //TESTDATA
             Lid lid1 = new Lid("Tom", "Kox", Geslacht.M, new DateTime(1981, 03, 12), Specialisatie.FilmEnMuziek);
             Lid lid2 = new Lid("Harry", "Peters", Geslacht.M, new DateTime(1979, 1, 2), Specialisatie.Actualiteit);
             Lid lid3 = new Lid("Sara", "Janssens", Geslacht.V, new DateTime(1985, 11, 17), Specialisatie.Cultuur);
@@ -39,8 +39,8 @@ namespace CVO_QuizClub
             DataModel.LidToevoegenAanTeam(lid2, team1);
             DataModel.LidToevoegenAanTeam(lid3, team1);
             DataModel.LidToevoegenAanTeam(lid4, team1);
-            DataModel.LidToevoegenAanTeam(lid5, team2); 
-            */
+            DataModel.LidToevoegenAanTeam(lid5, team1); 
+            
 
             InitializeComponent();
 
