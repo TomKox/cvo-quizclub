@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace CVO_QuizClub
 {
-    public partial class Form1 : Form
+    public partial class FrmQuizClub : Form
     {
         private DataModel DataModel { get; set; }
 
-        public Form1()
+        public FrmQuizClub()
         {
             DataModel = new DataModel();
 
@@ -39,20 +39,11 @@ namespace CVO_QuizClub
             DataModel.LidToevoegenAanTeam(lid2, team1);
             DataModel.LidToevoegenAanTeam(lid3, team1);
             DataModel.LidToevoegenAanTeam(lid4, team1);
-            DataModel.LidToevoegenAanTeam(lid5, team1); 
+            DataModel.LidToevoegenAanTeam(lid5, team2); 
             
 
             InitializeComponent();
 
-            foreach(Lid lid in DataModel.Leden)
-            {
-                txtMain.Text += lid.ToString() + Environment.NewLine;
-            }
-
-            foreach(Team team in DataModel.Teams)
-            {
-                txtMain.Text += team.ToString() + Environment.NewLine;
-            }
         }
     }
 }
