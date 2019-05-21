@@ -175,6 +175,14 @@ namespace CVO_QuizClub
 
         public void TeamToevoegen(Team team)
         {
+            foreach(Team bestaandTeam in _teams)
+            {
+                if(team.Naam.ToLower() == bestaandTeam.Naam.ToLower())
+                {
+                    throw new TeamNaamAlGebruiktException(team, bestaandTeam);
+                }
+            }
+
             _teams.Add(team);
             WriteDataFile();
         }

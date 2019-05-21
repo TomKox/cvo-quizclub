@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="DataModel.cs" />
     <Compile Include="Exceptions\LidOnbekendException.cs" />
+    <Compile Include="Exceptions\TeamNaamAlGebruiktException.cs" />
     <Compile Include="Exceptions\TeamOnbekendException.cs" />
     <Compile Include="Exceptions\TeamVolzetException.cs" />
     <Compile Include="Extensions.cs" />
