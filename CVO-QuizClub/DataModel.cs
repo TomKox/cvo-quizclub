@@ -173,6 +173,18 @@ namespace CVO_QuizClub
             WriteDataFile();
         }
 
+        public void LidVerwijderen(Lid lid)
+        {
+            if(Leden.Contains(lid))
+            {
+                Leden.Remove(lid);
+            }
+            else
+            {
+                throw new LidOnbekendException(lid);
+            }
+        }
+
         public void TeamToevoegen(Team team)
         {
             foreach(Team bestaandTeam in _teams)
