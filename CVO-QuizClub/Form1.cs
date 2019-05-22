@@ -45,5 +45,12 @@ namespace CVO_QuizClub
             InitializeComponent();
 
         }
+
+        public void Update()
+        {
+            lboxLeden.DataSource = DataModel.Leden;
+            lboxTeams.DataSource = DataModel.Teams;
+            
+        }
     }
 }

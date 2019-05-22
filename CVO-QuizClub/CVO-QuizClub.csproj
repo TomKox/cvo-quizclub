@@ -57,6 +57,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditLid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditLid.Designer.cs">
+      <DependentUpon>FrmEditLid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lid.cs" />
     <Compile Include="Persoon.cs" />
     <Compile Include="Program.cs" />
@@ -64,6 +70,9 @@
     <Compile Include="Team.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditLid.resx">
+      <DependentUpon>FrmEditLid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

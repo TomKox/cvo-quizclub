@@ -31,7 +31,7 @@
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.pnlLeden = new System.Windows.Forms.Panel();
             this.pnlLedenList = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lboxLeden = new System.Windows.Forms.ListBox();
             this.pnlLedenControls = new System.Windows.Forms.Panel();
             this.btnNieuwLid = new System.Windows.Forms.Button();
             this.btnLidBewerken = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.lblLeden = new System.Windows.Forms.Label();
             this.pnlTeams = new System.Windows.Forms.Panel();
             this.pnlTeamsList = new System.Windows.Forms.Panel();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lboxTeams = new System.Windows.Forms.ListBox();
             this.pnlTeamsControls = new System.Windows.Forms.Panel();
             this.btnNieuwTeam = new System.Windows.Forms.Button();
             this.lblTeamId = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.lblTeamNaam = new System.Windows.Forms.Label();
             this.pnlTeamLeden = new System.Windows.Forms.Panel();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.lboxTeamLeden = new System.Windows.Forms.ListBox();
             this.lblTeamLeden = new System.Windows.Forms.Label();
             this.lblTeams = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -107,7 +107,7 @@
             // 
             // pnlLedenList
             // 
-            this.pnlLedenList.Controls.Add(this.listBox1);
+            this.pnlLedenList.Controls.Add(this.lboxLeden);
             this.pnlLedenList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLedenList.Location = new System.Drawing.Point(30, 51);
             this.pnlLedenList.Name = "pnlLedenList";
@@ -115,14 +115,14 @@
             this.pnlLedenList.Size = new System.Drawing.Size(403, 451);
             this.pnlLedenList.TabIndex = 3;
             // 
-            // listBox1
+            // lboxLeden
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(403, 441);
-            this.listBox1.TabIndex = 1;
+            this.lboxLeden.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lboxLeden.FormattingEnabled = true;
+            this.lboxLeden.Location = new System.Drawing.Point(0, 0);
+            this.lboxLeden.Name = "lboxLeden";
+            this.lboxLeden.Size = new System.Drawing.Size(403, 441);
+            this.lboxLeden.TabIndex = 1;
             // 
             // pnlLedenControls
             // 
@@ -271,7 +271,7 @@
             // 
             // pnlTeamsList
             // 
-            this.pnlTeamsList.Controls.Add(this.listBox2);
+            this.pnlTeamsList.Controls.Add(this.lboxTeams);
             this.pnlTeamsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTeamsList.Location = new System.Drawing.Point(15, 51);
             this.pnlTeamsList.Name = "pnlTeamsList";
@@ -279,14 +279,14 @@
             this.pnlTeamsList.Size = new System.Drawing.Size(403, 357);
             this.pnlTeamsList.TabIndex = 4;
             // 
-            // listBox2
+            // lboxTeams
             // 
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(0, 0);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(403, 347);
-            this.listBox2.TabIndex = 2;
+            this.lboxTeams.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lboxTeams.FormattingEnabled = true;
+            this.lboxTeams.Location = new System.Drawing.Point(0, 0);
+            this.lboxTeams.Name = "lboxTeams";
+            this.lboxTeams.Size = new System.Drawing.Size(403, 347);
+            this.lboxTeams.TabIndex = 2;
             // 
             // pnlTeamsControls
             // 
@@ -376,21 +376,21 @@
             // 
             // pnlTeamLeden
             // 
-            this.pnlTeamLeden.Controls.Add(this.listBox3);
+            this.pnlTeamLeden.Controls.Add(this.lboxTeamLeden);
             this.pnlTeamLeden.Controls.Add(this.lblTeamLeden);
             this.pnlTeamLeden.Location = new System.Drawing.Point(3, 26);
             this.pnlTeamLeden.Name = "pnlTeamLeden";
             this.pnlTeamLeden.Size = new System.Drawing.Size(400, 117);
             this.pnlTeamLeden.TabIndex = 0;
             // 
-            // listBox3
+            // lboxTeamLeden
             // 
-            this.listBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(60, 0);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(340, 117);
-            this.listBox3.TabIndex = 1;
+            this.lboxTeamLeden.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lboxTeamLeden.FormattingEnabled = true;
+            this.lboxTeamLeden.Location = new System.Drawing.Point(60, 0);
+            this.lboxTeamLeden.Name = "lboxTeamLeden";
+            this.lboxTeamLeden.Size = new System.Drawing.Size(340, 117);
+            this.lboxTeamLeden.TabIndex = 1;
             // 
             // lblTeamLeden
             // 
@@ -480,10 +480,10 @@
 
         private System.Windows.Forms.TableLayoutPanel tblMain;
         private System.Windows.Forms.Panel pnlLeden;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lboxLeden;
         private System.Windows.Forms.Label lblLeden;
         private System.Windows.Forms.Panel pnlTeams;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lboxTeams;
         private System.Windows.Forms.Label lblTeams;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem applicatieToolStripMenuItem;
@@ -492,7 +492,7 @@
         private System.Windows.Forms.Panel pnlLedenControls;
         private System.Windows.Forms.Panel pnlTeamsControls;
         private System.Windows.Forms.Panel pnlTeamLeden;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox lboxTeamLeden;
         private System.Windows.Forms.Label lblTeamLeden;
         private System.Windows.Forms.Panel pnlLedenList;
         private System.Windows.Forms.Panel pnlTeamsList;
