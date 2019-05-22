@@ -190,7 +190,7 @@ namespace CVO_QuizClub
 
         public void LidVerwijderen(Lid lid)
         {
-            if(Leden.Contains(lid))
+            if(_leden.Contains(lid))
             {
                 _leden.Remove(lid);
             }
@@ -212,6 +212,18 @@ namespace CVO_QuizClub
 
             _teams.Add(team);
             WriteDataFile();
+        }
+
+        public void TeamVerwijderen(Team team)
+        {
+            if(_teams.Contains(team))
+            {
+                _teams.Remove(team);
+            }
+            else
+            {
+                throw new TeamOnbekendException(team);
+            }
         }
 
         public void LidToevoegenAanTeam(Lid lid, Team team)
