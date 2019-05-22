@@ -23,7 +23,7 @@ namespace CVO_QuizClub
         private static int _teller = 1;
         public int Nummer { get; set; }
         public Specialisatie Specialisatie { get; set; }
-        public int Teller { get { return _teller; } }
+        public static int Teller { get { return _teller; } }
 
         public Lid(string voornaam, string familienaam, Geslacht geslacht, DateTime geboortedatum, Specialisatie specialisatie) : base (voornaam, familienaam, geslacht, geboortedatum)
         {
