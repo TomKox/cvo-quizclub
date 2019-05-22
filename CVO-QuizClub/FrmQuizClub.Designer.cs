@@ -152,6 +152,7 @@
             this.btnNieuwLid.TabIndex = 13;
             this.btnNieuwLid.Text = "Nieuw";
             this.btnNieuwLid.UseVisualStyleBackColor = true;
+            this.btnNieuwLid.Click += new System.EventHandler(this.btnNieuwLid_Click);
             // 
             // btnLidBewerken
             // 

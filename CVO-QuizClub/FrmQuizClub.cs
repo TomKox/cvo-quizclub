@@ -43,14 +43,25 @@ namespace CVO_QuizClub
             
 
             InitializeComponent();
-
+            UpdateLijsten();
         }
 
-        public void Update()
+        public void UpdateLijsten()
         {
             lboxLeden.DataSource = DataModel.Leden;
             lboxTeams.DataSource = DataModel.Teams;
             
+        }
+
+        private void btnNieuwLid_Click(object sender, EventArgs e)
+        {
+            FrmEditLid editForm = new FrmEditLid(false);
+            
+            DialogResult result = editForm.ShowDialog(this);
+            if(result == DialogResult.OK) {
+                DataModel.LidToevoegen(editForm.Lid);
+                UpdateLijsten();
+            }
         }
     }
 }
