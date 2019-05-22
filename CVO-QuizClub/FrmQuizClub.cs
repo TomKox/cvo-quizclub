@@ -50,7 +50,6 @@ namespace CVO_QuizClub
         {
             lboxLeden.DataSource = DataModel.Leden;
             lboxTeams.DataSource = DataModel.Teams;
-            
         }
 
         private void btnNieuwLid_Click(object sender, EventArgs e)
@@ -59,9 +58,20 @@ namespace CVO_QuizClub
             
             DialogResult result = editForm.ShowDialog(this);
             if(result == DialogResult.OK) {
-                DataModel.LidToevoegen(editForm.Lid);
+                Lid nieuwLid = editForm.Lid;
+                DataModel.LidToevoegen(nieuwLid);
                 UpdateLijsten();
+                lboxLeden.SelectedItem = nieuwLid;
             }
+        }
+
+        private void lboxLeden_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Lid selectie = (Lid)lboxLeden.SelectedItem;
+            txtLidNaam.Text = selectie.VolledigeNaam;
+            txtLidSpecialisatie.Text = selectie.Specialisatie.GetDescription();
+            txtLidNummer.Text = selectie.Nummer.ToString();
+            txtLidLeeftijd.Text = selectie.Leeftijd.ToString();
         }
     }
 }

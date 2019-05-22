@@ -38,12 +38,12 @@
             this.btnLidVerwijderen = new System.Windows.Forms.Button();
             this.btnToevoegen = new System.Windows.Forms.Button();
             this.lblLeeftijd = new System.Windows.Forms.Label();
-            this.txtLeeftijd = new System.Windows.Forms.TextBox();
+            this.txtLidLeeftijd = new System.Windows.Forms.TextBox();
             this.lblSpecialisatie = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLidSpecialisatie = new System.Windows.Forms.TextBox();
+            this.txtLidNummer = new System.Windows.Forms.TextBox();
             this.lblLidNummer = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLidNaam = new System.Windows.Forms.TextBox();
             this.lblLidNaam = new System.Windows.Forms.Label();
             this.lblLeden = new System.Windows.Forms.Label();
             this.pnlTeams = new System.Windows.Forms.Panel();
@@ -123,6 +123,7 @@
             this.lboxLeden.Name = "lboxLeden";
             this.lboxLeden.Size = new System.Drawing.Size(403, 441);
             this.lboxLeden.TabIndex = 1;
+            this.lboxLeden.SelectedValueChanged += new System.EventHandler(this.lboxLeden_SelectedValueChanged);
             // 
             // pnlLedenControls
             // 
@@ -131,12 +132,12 @@
             this.pnlLedenControls.Controls.Add(this.btnLidVerwijderen);
             this.pnlLedenControls.Controls.Add(this.btnToevoegen);
             this.pnlLedenControls.Controls.Add(this.lblLeeftijd);
-            this.pnlLedenControls.Controls.Add(this.txtLeeftijd);
+            this.pnlLedenControls.Controls.Add(this.txtLidLeeftijd);
             this.pnlLedenControls.Controls.Add(this.lblSpecialisatie);
-            this.pnlLedenControls.Controls.Add(this.textBox3);
-            this.pnlLedenControls.Controls.Add(this.textBox2);
+            this.pnlLedenControls.Controls.Add(this.txtLidSpecialisatie);
+            this.pnlLedenControls.Controls.Add(this.txtLidNummer);
             this.pnlLedenControls.Controls.Add(this.lblLidNummer);
-            this.pnlLedenControls.Controls.Add(this.textBox1);
+            this.pnlLedenControls.Controls.Add(this.txtLidNaam);
             this.pnlLedenControls.Controls.Add(this.lblLidNaam);
             this.pnlLedenControls.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlLedenControls.Location = new System.Drawing.Point(30, 502);
@@ -190,12 +191,13 @@
             this.lblLeeftijd.TabIndex = 9;
             this.lblLeeftijd.Text = "Leeftijd";
             // 
-            // txtLeeftijd
+            // txtLidLeeftijd
             // 
-            this.txtLeeftijd.Location = new System.Drawing.Point(343, 32);
-            this.txtLeeftijd.Name = "txtLeeftijd";
-            this.txtLeeftijd.Size = new System.Drawing.Size(59, 20);
-            this.txtLeeftijd.TabIndex = 8;
+            this.txtLidLeeftijd.Location = new System.Drawing.Point(343, 32);
+            this.txtLidLeeftijd.Name = "txtLidLeeftijd";
+            this.txtLidLeeftijd.ReadOnly = true;
+            this.txtLidLeeftijd.Size = new System.Drawing.Size(59, 20);
+            this.txtLidLeeftijd.TabIndex = 8;
             // 
             // lblSpecialisatie
             // 
@@ -206,19 +208,21 @@
             this.lblSpecialisatie.TabIndex = 7;
             this.lblSpecialisatie.Text = "Specialisatie";
             // 
-            // textBox3
+            // txtLidSpecialisatie
             // 
-            this.textBox3.Location = new System.Drawing.Point(75, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(215, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtLidSpecialisatie.Location = new System.Drawing.Point(75, 32);
+            this.txtLidSpecialisatie.Name = "txtLidSpecialisatie";
+            this.txtLidSpecialisatie.ReadOnly = true;
+            this.txtLidSpecialisatie.Size = new System.Drawing.Size(215, 20);
+            this.txtLidSpecialisatie.TabIndex = 6;
             // 
-            // textBox2
+            // txtLidNummer
             // 
-            this.textBox2.Location = new System.Drawing.Point(343, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(59, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtLidNummer.Location = new System.Drawing.Point(343, 6);
+            this.txtLidNummer.Name = "txtLidNummer";
+            this.txtLidNummer.ReadOnly = true;
+            this.txtLidNummer.Size = new System.Drawing.Size(59, 20);
+            this.txtLidNummer.TabIndex = 5;
             // 
             // lblLidNummer
             // 
@@ -229,12 +233,13 @@
             this.lblLidNummer.TabIndex = 4;
             this.lblLidNummer.Text = "Nr";
             // 
-            // textBox1
+            // txtLidNaam
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtLidNaam.Location = new System.Drawing.Point(75, 6);
+            this.txtLidNaam.Name = "txtLidNaam";
+            this.txtLidNaam.ReadOnly = true;
+            this.txtLidNaam.Size = new System.Drawing.Size(215, 20);
+            this.txtLidNaam.TabIndex = 3;
             // 
             // lblLidNaam
             // 
@@ -497,15 +502,15 @@
         private System.Windows.Forms.Label lblTeamLeden;
         private System.Windows.Forms.Panel pnlLedenList;
         private System.Windows.Forms.Panel pnlTeamsList;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtLidNummer;
         private System.Windows.Forms.Label lblLidNummer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLidNaam;
         private System.Windows.Forms.Label lblLidNaam;
         private System.Windows.Forms.Button btnToevoegen;
         private System.Windows.Forms.Label lblLeeftijd;
-        private System.Windows.Forms.TextBox txtLeeftijd;
+        private System.Windows.Forms.TextBox txtLidLeeftijd;
         private System.Windows.Forms.Label lblSpecialisatie;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtLidSpecialisatie;
         private System.Windows.Forms.Button btnNieuwLid;
         private System.Windows.Forms.Button btnLidBewerken;
         private System.Windows.Forms.Button btnLidVerwijderen;

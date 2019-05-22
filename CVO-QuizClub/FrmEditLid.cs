@@ -31,6 +31,7 @@ namespace CVO_QuizClub
                 cmbSpecialisatie.Items.Add(s.GetDescription());
             }
 
+
             if (editMode)
             {
                 setEditMode();
@@ -64,8 +65,8 @@ namespace CVO_QuizClub
             string voornaam = txtVoornaam.Text;
             string familienaam = txtFamilienaam.Text;
             string geboortedatum = txtGeboortedatum.Text;
-            string geslachtString = cmbGeslacht.SelectedText;
-            string specialisatieString = cmbSpecialisatie.SelectedText;
+            string geslachtString = cmbGeslacht.Text;
+            string specialisatieString = cmbSpecialisatie.Text;
 
             _lid = new Lid(voornaam, 
                 familienaam, 
