@@ -51,11 +51,11 @@
     <Compile Include="Exceptions\TeamOnbekendException.cs" />
     <Compile Include="Exceptions\TeamVolzetException.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmQuizClub.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmQuizClub.Designer.cs">
+      <DependentUpon>FrmQuizClub.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEditLid.cs">
       <SubType>Form</SubType>
@@ -68,8 +68,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Team.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmQuizClub.resx">
+      <DependentUpon>FrmQuizClub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditLid.resx">
       <DependentUpon>FrmEditLid.cs</DependentUpon>
