@@ -17,8 +17,21 @@ namespace CVO_QuizClub
         private const string LidPrefix = "LID:";
         private const string TeamPrefix = "TEAM:";
 
-        public List<Lid> Leden { get => _leden; }
-        public List<Team> Teams { get => _teams;  }
+        public Lid[] Leden {
+            get
+            {
+                return _leden.ToArray();
+            }
+        }
+        public Team[] Teams
+        {
+            get
+            {
+                return _teams.ToArray();
+            }
+        }
+
+    
 
         
         /* CONSTRUCTORS */ 
