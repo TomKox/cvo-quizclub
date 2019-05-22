@@ -31,18 +31,18 @@ namespace CVO_QuizClub
             }
         }
 
-    
-
-        
-        /* CONSTRUCTORS */ 
+        /* CONSTRUCTORS */
+        #region constructors
         public DataModel()
         {
             _leden = new List<Lid>();
             _teams = new List<Team>();
             ReadFromDataFile();
         }
+        #endregion
 
         /* PRIVATE METHODS */
+        #region private methods
         private void ReadFromDataFile()
         {
             if(File.Exists(DataFile))
@@ -178,8 +178,10 @@ namespace CVO_QuizClub
             }
             return null;
         }
+        #endregion
 
         /* PUBLIC METHODS */
+        #region public methods
         public void LidToevoegen(Lid lid)
         {
             _leden.Add(lid);
@@ -251,5 +253,7 @@ namespace CVO_QuizClub
                 }
             }
         }
+        #endregion
     }
+
 }
