@@ -192,7 +192,7 @@ namespace CVO_QuizClub
         {
             if(Leden.Contains(lid))
             {
-                Leden.Remove(lid);
+                _leden.Remove(lid);
             }
             else
             {
