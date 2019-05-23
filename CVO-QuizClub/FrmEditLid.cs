@@ -13,11 +13,13 @@ namespace CVO_QuizClub
     public partial class FrmEditLid : Form
     {
         private Lid _lid;
+        public bool EditMode { get; set; }
 
         public Lid Lid { get => _lid; }
 
-        public FrmEditLid(Boolean editMode)
+        private FrmEditLid(Boolean editMode)
         {
+            EditMode = editMode;
             InitializeComponent();
             _lid = null;
 
@@ -32,7 +34,7 @@ namespace CVO_QuizClub
             }
 
 
-            if (editMode)
+            if (EditMode)
             {
                 setEditMode();
             }
@@ -42,8 +44,19 @@ namespace CVO_QuizClub
             }
         }
 
-        public FrmEditLid() : this(true)
+        public FrmEditLid() : this(false)
         {
+        }
+
+        public FrmEditLid(Lid lid): this(true)
+        {
+            _lid = lid;
+            txtNummer.Text = Lid.Nummer.ToString();
+            txtVoornaam.Text = Lid.Voornaam;
+            txtFamilienaam.Text = Lid.Familienaam;
+            txtGeboortedatum.Text = Lid.Geboortedatum.ToString("d");
+            cmbGeslacht.Text = Lid.Geslacht.ToString();
+            cmbSpecialisatie.Text = Lid.Specialisatie.GetDescription();
         }
 
         public void setEditMode()
@@ -61,18 +74,29 @@ namespace CVO_QuizClub
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string nummer = txtNummer.Text;
-            string voornaam = txtVoornaam.Text;
-            string familienaam = txtFamilienaam.Text;
-            string geboortedatum = txtGeboortedatum.Text;
-            string geslachtString = cmbGeslacht.Text;
-            string specialisatieString = cmbSpecialisatie.Text;
+            if(EditMode)
+            {
+                _lid.Voornaam = txtVoornaam.Text;
+                _lid.Familienaam = txtFamilienaam.Text;
+                _lid.Geboortedatum = ParseGeboortedatum(txtGeboortedatum.Text);
+                _lid.Geslacht = ParseGeslacht(cmbGeslacht.Text);
+                _lid.Specialisatie = ParseSpecialisatie(cmbSpecialisatie.Text);
+            }
+            else
+            {
+                string nummer = txtNummer.Text;
+                string voornaam = txtVoornaam.Text;
+                string familienaam = txtFamilienaam.Text;
+                string geboortedatum = txtGeboortedatum.Text;
+                string geslachtString = cmbGeslacht.Text;
+                string specialisatieString = cmbSpecialisatie.Text;
 
-            _lid = new Lid(voornaam, 
-                familienaam, 
-                ParseGeslacht(geslachtString),
-                ParseGeboortedatum(geboortedatum), 
-                ParseSpecialisatie(specialisatieString));
+                _lid = new Lid(voornaam, 
+                    familienaam, 
+                    ParseGeslacht(geslachtString),
+                    ParseGeboortedatum(geboortedatum), 
+                    ParseSpecialisatie(specialisatieString));
+            }
         }
 
         private DateTime ParseGeboortedatum(string datumstring)

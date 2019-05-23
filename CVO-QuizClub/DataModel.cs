@@ -265,6 +265,14 @@ namespace CVO_QuizClub
                 }
             }
         }
+
+        public void Refresh()
+        {
+            WriteDataFile();
+            _leden.Clear();
+            _teams.Clear();
+            ReadFromDataFile();
+        }
         #endregion
     }
 

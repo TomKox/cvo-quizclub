@@ -48,13 +48,14 @@ namespace CVO_QuizClub
 
         public void UpdateLijsten()
         {
+            DataModel.Refresh();
             lboxLeden.DataSource = DataModel.Leden;
             lboxTeams.DataSource = DataModel.Teams;
         }
 
         private void btnNieuwLid_Click(object sender, EventArgs e)
         {
-            FrmEditLid editForm = new FrmEditLid(false);
+            FrmEditLid editForm = new FrmEditLid();
             
             DialogResult result = editForm.ShowDialog(this);
             if(result == DialogResult.OK) {
@@ -72,6 +73,16 @@ namespace CVO_QuizClub
             txtLidSpecialisatie.Text = selectie.Specialisatie.GetDescription();
             txtLidNummer.Text = selectie.Nummer.ToString();
             txtLidLeeftijd.Text = selectie.Leeftijd.ToString();
+        }
+
+        private void btnLidBewerken_Click(object sender, EventArgs e)
+        {
+            Lid editLid = (Lid)lboxLeden.SelectedItem;
+            FrmEditLid editForm = new FrmEditLid(editLid);
+
+            DialogResult result = editForm.ShowDialog(this);
+            UpdateLijsten();
+            lboxLeden.SelectedItem = editLid;
         }
     }
 }
