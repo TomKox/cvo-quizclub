@@ -346,6 +346,7 @@
             this.btnNieuwTeam.TabIndex = 17;
             this.btnNieuwTeam.Text = "Nieuw";
             this.btnNieuwTeam.UseVisualStyleBackColor = true;
+            this.btnNieuwTeam.Click += new System.EventHandler(this.btnNieuwTeam_Click);
             // 
             // lblTeamId
             // 

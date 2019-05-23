@@ -30,9 +30,9 @@
         {
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.txtVoornaam = new System.Windows.Forms.TextBox();
+            this.txtNaam = new System.Windows.Forms.TextBox();
             this.lblNaam = new System.Windows.Forms.Label();
-            this.txtNummer = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -57,14 +57,15 @@
             this.btnConfirm.TabIndex = 11;
             this.btnConfirm.Text = "Toevoegen";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // txtVoornaam
+            // txtNaam
             // 
-            this.txtVoornaam.Location = new System.Drawing.Point(113, 60);
-            this.txtVoornaam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtVoornaam.Name = "txtVoornaam";
-            this.txtVoornaam.Size = new System.Drawing.Size(249, 26);
-            this.txtVoornaam.TabIndex = 7;
+            this.txtNaam.Location = new System.Drawing.Point(113, 60);
+            this.txtNaam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNaam.Name = "txtNaam";
+            this.txtNaam.Size = new System.Drawing.Size(249, 26);
+            this.txtNaam.TabIndex = 7;
             // 
             // lblNaam
             // 
@@ -76,15 +77,15 @@
             this.lblNaam.TabIndex = 10;
             this.lblNaam.Text = "Naam";
             // 
-            // txtNummer
+            // txtId
             // 
-            this.txtNummer.Location = new System.Drawing.Point(113, 20);
-            this.txtNummer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNummer.Name = "txtNummer";
-            this.txtNummer.ReadOnly = true;
-            this.txtNummer.Size = new System.Drawing.Size(85, 26);
-            this.txtNummer.TabIndex = 9;
-            this.txtNummer.TabStop = false;
+            this.txtId.Location = new System.Drawing.Point(113, 20);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(85, 26);
+            this.txtId.TabIndex = 9;
+            this.txtId.TabStop = false;
             // 
             // lblId
             // 
@@ -103,9 +104,9 @@
             this.ClientSize = new System.Drawing.Size(463, 222);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.txtVoornaam);
+            this.Controls.Add(this.txtNaam);
             this.Controls.Add(this.lblNaam);
-            this.Controls.Add(this.txtNummer);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Name = "FrmEditTeam";
             this.Text = "FrmEditTeam";
@@ -118,9 +119,9 @@
 
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.TextBox txtVoornaam;
+        private System.Windows.Forms.TextBox txtNaam;
         private System.Windows.Forms.Label lblNaam;
-        private System.Windows.Forms.TextBox txtNummer;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
     }
 }

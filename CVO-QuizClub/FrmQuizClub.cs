@@ -92,5 +92,18 @@ namespace CVO_QuizClub
                 UpdateLijsten();
             }
         }
+
+        private void btnNieuwTeam_Click(object sender, EventArgs e)
+        {
+            FrmEditTeam editTeam = new FrmEditTeam();
+            DialogResult result = editTeam.ShowDialog(this);
+            if(result == DialogResult.OK)
+            {
+                Team newTeam = editTeam.Team;
+                DataModel.TeamToevoegen(newTeam);
+                UpdateLijsten();
+            }
+
+        }
     }
 }

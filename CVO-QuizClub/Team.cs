@@ -18,6 +18,8 @@ namespace CVO_QuizClub
         public int Id { get => _id; }
         public string Naam { get; set; }
 
+        public static int Teller { get => _teller; }
+
         public Team(string naam)
         {
             Naam = naam;
