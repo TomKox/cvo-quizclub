@@ -62,7 +62,15 @@ namespace CVO_QuizClub
                 Lid nieuwLid = editForm.Lid;
                 DataModel.LidToevoegen(nieuwLid);
                 UpdateLijsten();
-                lboxLeden.SelectedItem = nieuwLid;
+                foreach(object obj in lboxLeden.Items)
+                {
+                    Lid lid = (Lid)obj;
+                    if (lid.Nummer == nieuwLid.Nummer)
+                    {
+                        lboxLeden.SelectedItem = lid;
+                        break;
+                    }
+                }
             }
         }
 
@@ -82,7 +90,15 @@ namespace CVO_QuizClub
 
             DialogResult result = editForm.ShowDialog(this);
             UpdateLijsten();
-            lboxLeden.SelectedItem = editLid;
+            foreach(object obj in lboxLeden.Items)
+            {
+                Lid lid = (Lid)obj;
+                if(lid.Nummer == editLid.Nummer)
+                {
+                    lboxLeden.SelectedItem = lid;
+                    break;
+                }
+            }
         }
     }
 }
