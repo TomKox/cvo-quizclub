@@ -35,5 +35,10 @@ namespace CVO_QuizClub
         {
             return $"{base.ToString()} ({Specialisatie.GetDescription()})" ;
         }
+
+        public static void ResetTeller()
+        {
+            _teller = 1;
+        }
     }
 }
