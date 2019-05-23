@@ -182,6 +182,7 @@
             this.btnLidVerwijderen.TabIndex = 11;
             this.btnLidVerwijderen.Text = "Verwijderen";
             this.btnLidVerwijderen.UseVisualStyleBackColor = true;
+            this.btnLidVerwijderen.Click += new System.EventHandler(this.btnLidVerwijderen_Click);
             // 
             // btnToevoegen
             // 

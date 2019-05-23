@@ -77,5 +77,20 @@ namespace CVO_QuizClub
                 }
             }
         }
+
+        private void btnLidVerwijderen_Click(object sender, EventArgs e)
+        {
+            Lid lid = (Lid)lboxLeden.SelectedItem;
+            string message = $"Lid '{lid.VolledigeNaam}' ({lid.Nummer}) zal verwijderd worden." + Environment.NewLine
+                + "Wilt u hiermee doorgaan?";
+            DialogResult result = MessageBox.Show(
+                message, "Bent u zeker?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(result==DialogResult.Yes)
+            {
+                DataModel.LidVerwijderen(lid);
+                UpdateLijsten();
+            }
+        }
     }
 }
