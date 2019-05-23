@@ -69,15 +69,16 @@ namespace CVO_QuizClub
 
         public override string ToString()
         {
-            StringBuilder teamleden = new StringBuilder();
-            foreach(Lid l in Leden)
-            {
-                if(l!=null) {
-                    teamleden.Append($"{l.VolledigeNaam} ({l.Specialisatie.GetDescription()}), ");
-                }
-            }
-            teamleden.Remove(teamleden.Length - 2, 2);
-            return $"Team '{Naam}' ({Id}): " + teamleden;
+            //StringBuilder teamleden = new StringBuilder();
+            //foreach(Lid l in Leden)
+            //{
+            //    if(l!=null) {
+            //        teamleden.Append($"{l.VolledigeNaam} ({l.Specialisatie.GetDescription()}), ");
+            //    }
+            //}
+            //teamleden.Remove(teamleden.Length - 2, 2);
+            //return $"Team '{Naam}' ({Id}): " + teamleden;
+            return Naam;
         }
     }
 }
