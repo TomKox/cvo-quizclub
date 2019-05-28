@@ -291,6 +291,32 @@ namespace CVO_QuizClub
                 }
             }
         }
+
+        private void lboxLeden_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (lboxLeden.Items.Count == 0)
+                return;
+
+            int index = lboxLeden.IndexFromPoint(e.X, e.Y);
+            Lid lid = (Lid)lboxLeden.Items[index];
+            DragDropEffects dde1 = DoDragDrop(lid, DragDropEffects.Copy);
+
+            //if (dde1 == DragDropEffects.All)
+            //{
+            //    lboxLeden.Items.RemoveAt(lboxLeden.IndexFromPoint(e.X, e.Y));
+            //}
+        }
         #endregion
+
+        private void lboxTeamLeden_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void lboxTeamLeden_DragDrop(object sender, DragEventArgs e)
+        {
+                Lid lid = (Lid)e.Data.GetData(typeof(Lid));
+                TeamlidToevoegen();
+        }
     }
 }

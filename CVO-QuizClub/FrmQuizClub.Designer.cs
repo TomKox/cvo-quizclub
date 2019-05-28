@@ -124,6 +124,7 @@
             this.lboxLeden.Size = new System.Drawing.Size(403, 441);
             this.lboxLeden.TabIndex = 1;
             this.lboxLeden.SelectedValueChanged += new System.EventHandler(this.lboxLeden_SelectedValueChanged);
+            this.lboxLeden.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lboxLeden_MouseDown);
             // 
             // pnlLedenControls
             // 
@@ -401,12 +402,15 @@
             // 
             // lboxTeamLeden
             // 
+            this.lboxTeamLeden.AllowDrop = true;
             this.lboxTeamLeden.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lboxTeamLeden.FormattingEnabled = true;
             this.lboxTeamLeden.Location = new System.Drawing.Point(60, 0);
             this.lboxTeamLeden.Name = "lboxTeamLeden";
             this.lboxTeamLeden.Size = new System.Drawing.Size(340, 117);
             this.lboxTeamLeden.TabIndex = 1;
+            this.lboxTeamLeden.DragDrop += new System.Windows.Forms.DragEventHandler(this.lboxTeamLeden_DragDrop);
+            this.lboxTeamLeden.DragOver += new System.Windows.Forms.DragEventHandler(this.lboxTeamLeden_DragOver);
             // 
             // lblTeamLeden
             // 
