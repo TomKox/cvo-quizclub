@@ -368,6 +368,7 @@
             this.btnTeamBewerken.TabIndex = 16;
             this.btnTeamBewerken.Text = "Bewerken";
             this.btnTeamBewerken.UseVisualStyleBackColor = true;
+            this.btnTeamBewerken.Click += new System.EventHandler(this.btnTeamBewerken_Click);
             // 
             // textBox5
             // 

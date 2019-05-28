@@ -22,8 +22,6 @@ namespace CVO_QuizClub
 
             InitializeComponent();
 
-            SelectedLid = null;
-            SelectedTeam = null;
             UpdateLijsten();
         }
 
@@ -33,13 +31,15 @@ namespace CVO_QuizClub
             lboxLeden.DataSource = DataModel.Leden;
             lboxTeams.DataSource = DataModel.Teams;
 
-            if (SelectedLid != null)
-            {
-                foreach(Lid lid in DataModel.Leden)
+            if(SelectedLid != null)
+            { 
+                foreach(Object obj in lboxLeden.Items)
                 {
+                    Lid lid = (Lid)obj;
                     if(lid.Nummer == SelectedLid.Nummer)
                     {
                         lboxLeden.SelectedItem = lid;
+                        break;
                     }
                 }
             }
@@ -47,6 +47,7 @@ namespace CVO_QuizClub
             {
                 lboxLeden.SelectedIndex = 0;
             }
+
             lboxTeams.SelectedItem = SelectedTeam;
         }
 
@@ -70,6 +71,13 @@ namespace CVO_QuizClub
             txtLidSpecialisatie.Text = selectie.Specialisatie.GetDescription();
             txtLidNummer.Text = selectie.Nummer.ToString();
             txtLidLeeftijd.Text = selectie.Leeftijd.ToString();
+            //SelectedLid = selectie;
+
+            //SelectedLid = (Lid)lboxLeden.SelectedItem;
+            //txtLidNaam.Text = SelectedLid.VolledigeNaam;
+            //txtLidSpecialisatie.Text = SelectedLid.Specialisatie.GetDescription();
+            //txtLidNummer.Text = SelectedLid.Nummer.ToString();
+            //txtLidLeeftijd.Text = SelectedLid.Leeftijd.ToString();
         }
 
         private void btnLidBewerken_Click(object sender, EventArgs e)
@@ -78,8 +86,11 @@ namespace CVO_QuizClub
             FrmEditLid editForm = new FrmEditLid(editLid);
 
             DialogResult result = editForm.ShowDialog(this);
-            SelectedLid = editLid;
-            UpdateLijsten();
+            if(result == DialogResult.OK) {
+                SelectedLid = editForm.Lid;
+                lboxLeden.SelectedItem = editLid;
+                UpdateLijsten();
+            }
         }
 
         private void btnLidVerwijderen_Click(object sender, EventArgs e)
@@ -109,6 +120,16 @@ namespace CVO_QuizClub
                 UpdateLijsten();
             }
 
+        }
+
+        private void btnTeamBewerken_Click(object sender, EventArgs e)
+        {
+            FrmEditTeam editTeam = new FrmEditTeam(SelectedTeam);
+            DialogResult result = editTeam.ShowDialog(this);
+            if(result == DialogResult.OK)
+            {
+                UpdateLijsten();
+            }
         }
     }
 }
