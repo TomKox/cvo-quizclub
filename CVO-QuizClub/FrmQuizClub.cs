@@ -113,7 +113,14 @@ namespace CVO_QuizClub
             SelectedTeam = (Team)lboxTeams.SelectedItem;
             Lid teamlid = (Lid)lboxTeamLeden.SelectedItem;
 
-            DataModel.LidVerwijderenUitTeam(teamlid, SelectedTeam);
+            try
+            {
+                DataModel.LidVerwijderenUitTeam(teamlid, SelectedTeam);
+            }
+            catch(NullReferenceException ex)
+            {
+                // teamlid == null --> Do nothing.
+            }
 
             UpdateLijsten();
         }
