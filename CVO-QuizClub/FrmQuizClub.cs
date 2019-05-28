@@ -203,6 +203,11 @@ namespace CVO_QuizClub
             TeamlidToevoegen();
         }
 
+        private void btnTeamLidVerwijderen_Click(object sender, EventArgs e)
+        {
+            TeamlidVerwijderen();
+        }
+
         private void TeamlidToevoegen()
         {
             //Lid lid = (Lid)lboxLeden.SelectedItem;
@@ -225,5 +230,17 @@ namespace CVO_QuizClub
 
             UpdateLijsten();
         }
+
+        private void TeamlidVerwijderen()
+        {
+            SelectedTeam = (Team)lboxTeams.SelectedItem;
+            Lid teamlid = (Lid)lboxTeamLeden.SelectedItem;
+
+            DataModel.LidVerwijderenUitTeam(teamlid, SelectedTeam);
+
+            UpdateLijsten();
+        }
+
+
     }
 }

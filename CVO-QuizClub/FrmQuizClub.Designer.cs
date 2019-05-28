@@ -371,6 +371,7 @@
             this.btnTeamLidVerwijderen.TabIndex = 14;
             this.btnTeamLidVerwijderen.Text = "Teamlid verwijderen";
             this.btnTeamLidVerwijderen.UseVisualStyleBackColor = true;
+            this.btnTeamLidVerwijderen.Click += new System.EventHandler(this.btnTeamLidVerwijderen_Click);
             // 
             // txtTeamNaam
             // 
