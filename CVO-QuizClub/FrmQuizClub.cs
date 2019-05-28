@@ -162,5 +162,22 @@ namespace CVO_QuizClub
                 }
             }
         }
+
+        private void btnTeamVerwijderen_Click(object sender, EventArgs e)
+        {
+            Team team = (Team)lboxTeams.SelectedItem;
+            string message = $"Team '{team.Naam}' ({team.Id}) zal verwijderd worden." + Environment.NewLine
+                + "Wilt u hiermee doorgaan?";
+            DialogResult result = MessageBox.Show(
+                message, "Bent u zeker?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                DataModel.TeamVerwijderen(team);
+                SelectedTeam = null;
+                UpdateLijsten();
+            }
+
+        }
     }
 }
