@@ -20,11 +20,10 @@ namespace CVO_QuizClub
         private FrmEditTeam(bool editMode)
         {
             _team = null;
+            InitializeComponent();
             EditMode = editMode;
 
-            InitializeComponent();
-
-            if(EditMode)
+            if (EditMode)
             {
                 SetEditMode();
             }
@@ -38,7 +37,6 @@ namespace CVO_QuizClub
         {
             this.Text = "Team bewerken";
             btnConfirm.Text = "Opslaan";
-            txtId.Text = _team.Id.ToString();
         }
 
         private void SetNewMode()
@@ -56,6 +54,7 @@ namespace CVO_QuizClub
         {
             _team = team;
             txtId.Text = _team.Id.ToString();
+            txtNaam.Text = _team.Naam;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

@@ -48,7 +48,22 @@ namespace CVO_QuizClub
                 lboxLeden.SelectedIndex = 0;
             }
 
-            lboxTeams.SelectedItem = SelectedTeam;
+            if(SelectedTeam != null)
+            {
+                foreach (Object obj in lboxTeams.Items)
+                {
+                    Team team = (Team)obj;
+                    if(team.Id == SelectedTeam.Id)
+                    {
+                        lboxTeams.SelectedItem = team;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                lboxTeams.SelectedIndex = 0;
+            }
         }
 
         private void btnNieuwLid_Click(object sender, EventArgs e)
@@ -124,10 +139,13 @@ namespace CVO_QuizClub
 
         private void btnTeamBewerken_Click(object sender, EventArgs e)
         {
-            FrmEditTeam editTeam = new FrmEditTeam(SelectedTeam);
-            DialogResult result = editTeam.ShowDialog(this);
+            Team editTeam = (Team)lboxTeams.SelectedItem;
+            FrmEditTeam editForm = new FrmEditTeam(editTeam);
+            DialogResult result = editForm.ShowDialog(this);
             if(result == DialogResult.OK)
             {
+                SelectedTeam = editForm.Team;
+                lboxTeams.SelectedItem = editTeam;
                 UpdateLijsten();
             }
         }
