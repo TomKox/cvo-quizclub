@@ -86,13 +86,6 @@ namespace CVO_QuizClub
             txtLidSpecialisatie.Text = selectie.Specialisatie.GetDescription();
             txtLidNummer.Text = selectie.Nummer.ToString();
             txtLidLeeftijd.Text = selectie.Leeftijd.ToString();
-            //SelectedLid = selectie;
-
-            //SelectedLid = (Lid)lboxLeden.SelectedItem;
-            //txtLidNaam.Text = SelectedLid.VolledigeNaam;
-            //txtLidSpecialisatie.Text = SelectedLid.Specialisatie.GetDescription();
-            //txtLidNummer.Text = SelectedLid.Nummer.ToString();
-            //txtLidLeeftijd.Text = SelectedLid.Leeftijd.ToString();
         }
 
         private void btnLidBewerken_Click(object sender, EventArgs e)
@@ -147,6 +140,26 @@ namespace CVO_QuizClub
                 SelectedTeam = editForm.Team;
                 lboxTeams.SelectedItem = editTeam;
                 UpdateLijsten();
+            }
+        }
+
+        private void lboxTeams_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //txtLidNaam.Text = selectie.VolledigeNaam;
+            //txtLidSpecialisatie.Text = selectie.Specialisatie.GetDescription();
+            //txtLidNummer.Text = selectie.Nummer.ToString();
+            //txtLidLeeftijd.Text = selectie.Leeftijd.ToString();
+
+            Team selectie = (Team)lboxTeams.SelectedItem;
+            txtTeamNaam.Text = selectie.Naam;
+            txtTeamId.Text = selectie.Id.ToString();
+
+            lboxTeamLeden.Items.Clear();
+            foreach(Lid teamlid in selectie.Leden)
+            {
+                if(teamlid != null) { 
+                    lboxTeamLeden.Items.Add(teamlid);
+                }
             }
         }
     }

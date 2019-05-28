@@ -53,10 +53,10 @@
             this.btnNieuwTeam = new System.Windows.Forms.Button();
             this.lblTeamId = new System.Windows.Forms.Label();
             this.btnTeamBewerken = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtTeamId = new System.Windows.Forms.TextBox();
             this.btnTeamVerwijderen = new System.Windows.Forms.Button();
             this.btnTeamLidVerwijderen = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTeamNaam = new System.Windows.Forms.TextBox();
             this.lblTeamNaam = new System.Windows.Forms.Label();
             this.pnlTeamLeden = new System.Windows.Forms.Panel();
             this.lboxTeamLeden = new System.Windows.Forms.ListBox();
@@ -318,16 +318,17 @@
             this.lboxTeams.Name = "lboxTeams";
             this.lboxTeams.Size = new System.Drawing.Size(607, 539);
             this.lboxTeams.TabIndex = 2;
+            this.lboxTeams.SelectedValueChanged += new System.EventHandler(this.lboxTeams_SelectedValueChanged);
             // 
             // pnlTeamsControls
             // 
             this.pnlTeamsControls.Controls.Add(this.btnNieuwTeam);
             this.pnlTeamsControls.Controls.Add(this.lblTeamId);
             this.pnlTeamsControls.Controls.Add(this.btnTeamBewerken);
-            this.pnlTeamsControls.Controls.Add(this.textBox5);
+            this.pnlTeamsControls.Controls.Add(this.txtTeamId);
             this.pnlTeamsControls.Controls.Add(this.btnTeamVerwijderen);
             this.pnlTeamsControls.Controls.Add(this.btnTeamLidVerwijderen);
-            this.pnlTeamsControls.Controls.Add(this.textBox4);
+            this.pnlTeamsControls.Controls.Add(this.txtTeamNaam);
             this.pnlTeamsControls.Controls.Add(this.lblTeamNaam);
             this.pnlTeamsControls.Controls.Add(this.pnlTeamLeden);
             this.pnlTeamsControls.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -370,13 +371,14 @@
             this.btnTeamBewerken.UseVisualStyleBackColor = true;
             this.btnTeamBewerken.Click += new System.EventHandler(this.btnTeamBewerken_Click);
             // 
-            // textBox5
+            // txtTeamId
             // 
-            this.textBox5.Location = new System.Drawing.Point(516, 0);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(86, 26);
-            this.textBox5.TabIndex = 14;
+            this.txtTeamId.Location = new System.Drawing.Point(516, 0);
+            this.txtTeamId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTeamId.Name = "txtTeamId";
+            this.txtTeamId.ReadOnly = true;
+            this.txtTeamId.Size = new System.Drawing.Size(86, 26);
+            this.txtTeamId.TabIndex = 14;
             // 
             // btnTeamVerwijderen
             // 
@@ -398,13 +400,14 @@
             this.btnTeamLidVerwijderen.Text = "Teamlid verwijderen";
             this.btnTeamLidVerwijderen.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtTeamNaam
             // 
-            this.textBox4.Location = new System.Drawing.Point(94, 0);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(374, 26);
-            this.textBox4.TabIndex = 14;
+            this.txtTeamNaam.Location = new System.Drawing.Point(94, 0);
+            this.txtTeamNaam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTeamNaam.Name = "txtTeamNaam";
+            this.txtTeamNaam.ReadOnly = true;
+            this.txtTeamNaam.Size = new System.Drawing.Size(374, 26);
+            this.txtTeamNaam.TabIndex = 14;
             // 
             // lblTeamNaam
             // 
@@ -561,10 +564,10 @@
         private System.Windows.Forms.Button btnNieuwTeam;
         private System.Windows.Forms.Label lblTeamId;
         private System.Windows.Forms.Button btnTeamBewerken;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTeamId;
         private System.Windows.Forms.Button btnTeamVerwijderen;
         private System.Windows.Forms.Button btnTeamLidVerwijderen;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTeamNaam;
         private System.Windows.Forms.Label lblTeamNaam;
     }
 }
