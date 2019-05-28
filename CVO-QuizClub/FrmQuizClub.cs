@@ -306,8 +306,7 @@ namespace CVO_QuizClub
             //    lboxLeden.Items.RemoveAt(lboxLeden.IndexFromPoint(e.X, e.Y));
             //}
         }
-        #endregion
-
+        
         private void lboxTeamLeden_DragOver(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
@@ -318,5 +317,6 @@ namespace CVO_QuizClub
                 Lid lid = (Lid)e.Data.GetData(typeof(Lid));
                 TeamlidToevoegen();
         }
+        #endregion
     }
 }
