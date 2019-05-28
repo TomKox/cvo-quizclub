@@ -13,6 +13,8 @@ namespace CVO_QuizClub
     public partial class FrmQuizClub : Form
     {
         private DataModel DataModel { get; set; }
+        private Lid SelectedLid { get; set; }
+        private Team SelectedTeam { get; set; }
 
         public FrmQuizClub()
         {
@@ -20,6 +22,8 @@ namespace CVO_QuizClub
 
             InitializeComponent();
 
+            SelectedLid = null;
+            SelectedTeam = null;
             UpdateLijsten();
         }
 
@@ -28,6 +32,22 @@ namespace CVO_QuizClub
             DataModel.Refresh();
             lboxLeden.DataSource = DataModel.Leden;
             lboxTeams.DataSource = DataModel.Teams;
+
+            if (SelectedLid != null)
+            {
+                foreach(Lid lid in DataModel.Leden)
+                {
+                    if(lid.Nummer == SelectedLid.Nummer)
+                    {
+                        lboxLeden.SelectedItem = lid;
+                    }
+                }
+            }
+            else
+            {
+                lboxLeden.SelectedIndex = 0;
+            }
+            lboxTeams.SelectedItem = SelectedTeam;
         }
 
         private void btnNieuwLid_Click(object sender, EventArgs e)
@@ -38,16 +58,8 @@ namespace CVO_QuizClub
             if(result == DialogResult.OK) {
                 Lid nieuwLid = editForm.Lid;
                 DataModel.LidToevoegen(nieuwLid);
+                SelectedLid = nieuwLid;
                 UpdateLijsten();
-                foreach(object obj in lboxLeden.Items)
-                {
-                    Lid lid = (Lid)obj;
-                    if (lid.Nummer == nieuwLid.Nummer)
-                    {
-                        lboxLeden.SelectedItem = lid;
-                        break;
-                    }
-                }
             }
         }
 
@@ -66,16 +78,8 @@ namespace CVO_QuizClub
             FrmEditLid editForm = new FrmEditLid(editLid);
 
             DialogResult result = editForm.ShowDialog(this);
+            SelectedLid = editLid;
             UpdateLijsten();
-            foreach(object obj in lboxLeden.Items)
-            {
-                Lid lid = (Lid)obj;
-                if(lid.Nummer == editLid.Nummer)
-                {
-                    lboxLeden.SelectedItem = lid;
-                    break;
-                }
-            }
         }
 
         private void btnLidVerwijderen_Click(object sender, EventArgs e)
@@ -89,6 +93,7 @@ namespace CVO_QuizClub
             if(result==DialogResult.Yes)
             {
                 DataModel.LidVerwijderen(lid);
+                SelectedLid = null;
                 UpdateLijsten();
             }
         }
