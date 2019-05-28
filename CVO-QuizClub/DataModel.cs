@@ -48,17 +48,49 @@ namespace CVO_QuizClub
             if(File.Exists(DataFile))
             {
                 string[] lines = File.ReadAllLines(DataFile);
+                int lineNr = 0;
+                List<string> errors = new List<string>();
 
                 foreach(string line in lines)
                 {
+                    lineNr++;
                     if(line.StartsWith(LidPrefix))
                     {
-                        AddLidFromDataLine(line);
+                        try
+                        { 
+                            AddLidFromDataLine(line);
+                        }
+                        catch (Exception ex)
+                        {
+                            string message = $"Fout bij inlezen '{DataFile}' op lijn {lineNr}: " + ex.Message;
+                            errors.Add(message);
+                        }
+
                     }
                     if(line.StartsWith(TeamPrefix))
                     {
-                        AddTeamFromDataLine(line);
+                        try
+                        { 
+                            AddTeamFromDataLine(line);
+                        }
+                        catch(Exception ex)
+                        {
+                            string message = $"Fout bij inlezen '{DataFile}' op lijn {lineNr}: " + ex.Message;
+                            errors.Add(message);
+                        }
                     }
+                }
+
+                if(errors.Count > 0)
+                {
+                    StringBuilder message = new StringBuilder($"Er waren fouten bij het inlezen van '{DataFile}':");
+                    message.Append(Environment.NewLine);
+                    foreach(string error in errors)
+                    {
+                        message.Append(error);
+                        message.Append(Environment.NewLine);
+                    }
+                    throw new Exception(message.ToString());
                 }
             }
         }

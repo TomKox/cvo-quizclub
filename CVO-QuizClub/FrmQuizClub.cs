@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CVO_QuizClub.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,16 @@ namespace CVO_QuizClub
 
         public FrmQuizClub()
         {
-            DataModel = new DataModel();
+            try
+            {
+                DataModel = new DataModel();
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message + Environment.NewLine + "U moet deze fouten eerst corrigeren, voordat u de toepassing kunt starten.";
+                MessageBox.Show(message,"Fout bij inlezen gegevens", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(13); // Invalid data: https://docs.microsoft.com/en-gb/windows/desktop/Debug/system-error-codes--0-499-
+            }
 
             InitializeComponent();
 
@@ -124,7 +134,15 @@ namespace CVO_QuizClub
             if(result == DialogResult.OK)
             {
                 Team newTeam = editTeam.Team;
-                DataModel.TeamToevoegen(newTeam);
+                try
+                { 
+                    DataModel.TeamToevoegen(newTeam);
+                }
+                catch(TeamNaamAlGebruiktException ex)
+                {
+                    MessageBox.Show(ex.Message, "Teamnaam al gebruikt!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 UpdateLijsten();
             }
 
@@ -178,6 +196,34 @@ namespace CVO_QuizClub
                 UpdateLijsten();
             }
 
+        }
+
+        private void btnToevoegen_Click(object sender, EventArgs e)
+        {
+            TeamlidToevoegen();
+        }
+
+        private void TeamlidToevoegen()
+        {
+            //Lid lid = (Lid)lboxLeden.SelectedItem;
+            //Team team = (Team)lboxTeams.SelectedItem;
+            SelectedLid = (Lid)lboxLeden.SelectedItem;
+            SelectedTeam = (Team)lboxTeams.SelectedItem;
+
+            try
+            {
+                DataModel.LidToevoegenAanTeam(SelectedLid, SelectedTeam);
+            }
+            catch(LidAlTeamlidException ex)
+            {
+                MessageBox.Show(ex.Message, "Al teamlid!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch(TeamVolzetException ex)
+            {
+                MessageBox.Show(ex.Message, "Team volzet!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            UpdateLijsten();
         }
     }
 }

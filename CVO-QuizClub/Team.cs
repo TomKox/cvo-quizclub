@@ -37,6 +37,11 @@ namespace CVO_QuizClub
 
         public void LidToevoegen(Lid lid)
         {
+            if(_leden.Contains(lid))
+            {
+                throw new LidAlTeamlidException(lid,this);
+            }
+
             bool toegevoegd = false;
             for(int i = 0; i < Leden.Length; i++)
             {

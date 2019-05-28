@@ -183,6 +183,7 @@
             this.btnToevoegen.TabIndex = 10;
             this.btnToevoegen.Text = "Toevoegen aan team";
             this.btnToevoegen.UseVisualStyleBackColor = true;
+            this.btnToevoegen.Click += new System.EventHandler(this.btnToevoegen_Click);
             // 
             // lblLeeftijd
             // 
