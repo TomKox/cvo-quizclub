@@ -227,6 +227,17 @@ namespace CVO_QuizClub
             }
         }
 
+        private void ShowInfo()
+        {
+            string info = "QuizClub Beheer" + Environment.NewLine
+                + Environment.NewLine
+                + "Evaluatieopdracht C# 2e semester" + Environment.NewLine
+                + "CVO Hageland" + Environment.NewLine
+                + "2019 - Tom Kox";
+
+            MessageBox.Show(info, "Informatie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         #endregion
 
         /* GUI EVENTS */
@@ -320,6 +331,63 @@ namespace CVO_QuizClub
                 Lid lid = (Lid)e.Data.GetData(typeof(Lid));
                 TeamlidToevoegen();
         }
+
+        private void afsluitenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowInfo();
+        }
+
+        private void nieuwLidAanmakenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NieuwLid();
+        }
+
+        private void lidBewerkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LidBewerken();
+        }
+
+        private void lidVerwijderenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LidVerwijderen();
+        }
+
+        private void lidToevoegenAanTeamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TeamlidToevoegen();
+        }
+
+        private void nieuwLidToevoegenAanTeamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NieuwLid();
+            TeamlidToevoegen();
+        }
+
+        private void nieuwTeamAanmakenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NieuwTeam();
+        }
+
+        private void teamBewerkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TeamBewerken();
+        }
+
+        private void teamVerwijderenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TeamVerwijderen();
+        }
+
+        private void teamlidVerwijderenUitTeamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TeamlidVerwijderen();
+        }
     }
 }
