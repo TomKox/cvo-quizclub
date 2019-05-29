@@ -47,110 +47,129 @@
             // lblNummer
             // 
             this.lblNummer.AutoSize = true;
-            this.lblNummer.Location = new System.Drawing.Point(68, 9);
+            this.lblNummer.Location = new System.Drawing.Point(102, 14);
+            this.lblNummer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNummer.Name = "lblNummer";
-            this.lblNummer.Size = new System.Drawing.Size(18, 13);
+            this.lblNummer.Size = new System.Drawing.Size(25, 20);
             this.lblNummer.TabIndex = 0;
             this.lblNummer.Text = "Nr";
             // 
             // txtNummer
             // 
-            this.txtNummer.Location = new System.Drawing.Point(92, 6);
+            this.txtNummer.Location = new System.Drawing.Point(138, 9);
+            this.txtNummer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNummer.Name = "txtNummer";
             this.txtNummer.ReadOnly = true;
-            this.txtNummer.Size = new System.Drawing.Size(58, 20);
+            this.txtNummer.Size = new System.Drawing.Size(85, 26);
             this.txtNummer.TabIndex = 1;
             this.txtNummer.TabStop = false;
             // 
             // txtVoornaam
             // 
-            this.txtVoornaam.Location = new System.Drawing.Point(92, 32);
+            this.txtVoornaam.Location = new System.Drawing.Point(138, 49);
+            this.txtVoornaam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtVoornaam.Name = "txtVoornaam";
-            this.txtVoornaam.Size = new System.Drawing.Size(100, 20);
+            this.txtVoornaam.Size = new System.Drawing.Size(148, 26);
             this.txtVoornaam.TabIndex = 0;
+            this.txtVoornaam.TextChanged += new System.EventHandler(this.txtVoornaam_TextChanged);
             // 
             // lblVoornaam
             // 
             this.lblVoornaam.AutoSize = true;
-            this.lblVoornaam.Location = new System.Drawing.Point(31, 35);
+            this.lblVoornaam.Location = new System.Drawing.Point(46, 54);
+            this.lblVoornaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVoornaam.Name = "lblVoornaam";
-            this.lblVoornaam.Size = new System.Drawing.Size(55, 13);
+            this.lblVoornaam.Size = new System.Drawing.Size(83, 20);
             this.lblVoornaam.TabIndex = 2;
             this.lblVoornaam.Text = "Voornaam";
             // 
             // txtFamilienaam
             // 
-            this.txtFamilienaam.Location = new System.Drawing.Point(92, 58);
+            this.txtFamilienaam.Location = new System.Drawing.Point(138, 89);
+            this.txtFamilienaam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFamilienaam.Name = "txtFamilienaam";
-            this.txtFamilienaam.Size = new System.Drawing.Size(100, 20);
+            this.txtFamilienaam.Size = new System.Drawing.Size(148, 26);
             this.txtFamilienaam.TabIndex = 1;
+            this.txtFamilienaam.TextChanged += new System.EventHandler(this.txtFamilienaam_TextChanged);
             // 
             // lblFamilienaam
             // 
             this.lblFamilienaam.AutoSize = true;
-            this.lblFamilienaam.Location = new System.Drawing.Point(21, 61);
+            this.lblFamilienaam.Location = new System.Drawing.Point(32, 94);
+            this.lblFamilienaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFamilienaam.Name = "lblFamilienaam";
-            this.lblFamilienaam.Size = new System.Drawing.Size(65, 13);
+            this.lblFamilienaam.Size = new System.Drawing.Size(99, 20);
             this.lblFamilienaam.TabIndex = 4;
             this.lblFamilienaam.Text = "Familienaam";
             // 
             // lblGeboortedatum
             // 
             this.lblGeboortedatum.AutoSize = true;
-            this.lblGeboortedatum.Location = new System.Drawing.Point(6, 87);
+            this.lblGeboortedatum.Location = new System.Drawing.Point(9, 134);
+            this.lblGeboortedatum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGeboortedatum.Name = "lblGeboortedatum";
-            this.lblGeboortedatum.Size = new System.Drawing.Size(80, 13);
+            this.lblGeboortedatum.Size = new System.Drawing.Size(122, 20);
             this.lblGeboortedatum.TabIndex = 6;
             this.lblGeboortedatum.Text = "Geboortedatum";
             // 
             // txtGeboortedatum
             // 
-            this.txtGeboortedatum.Location = new System.Drawing.Point(92, 84);
+            this.txtGeboortedatum.Location = new System.Drawing.Point(138, 129);
+            this.txtGeboortedatum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGeboortedatum.Mask = "00/00/0000";
             this.txtGeboortedatum.Name = "txtGeboortedatum";
-            this.txtGeboortedatum.Size = new System.Drawing.Size(73, 20);
+            this.txtGeboortedatum.Size = new System.Drawing.Size(108, 26);
             this.txtGeboortedatum.TabIndex = 2;
+            this.txtGeboortedatum.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtGeboortedatum_MaskInputRejected);
+            this.txtGeboortedatum.TextChanged += new System.EventHandler(this.txtGeboortedatum_TextChanged);
             // 
             // cmbGeslacht
             // 
             this.cmbGeslacht.FormattingEnabled = true;
-            this.cmbGeslacht.Location = new System.Drawing.Point(92, 110);
+            this.cmbGeslacht.Location = new System.Drawing.Point(138, 169);
+            this.cmbGeslacht.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGeslacht.Name = "cmbGeslacht";
-            this.cmbGeslacht.Size = new System.Drawing.Size(58, 21);
+            this.cmbGeslacht.Size = new System.Drawing.Size(85, 28);
             this.cmbGeslacht.TabIndex = 3;
+            this.cmbGeslacht.SelectedIndexChanged += new System.EventHandler(this.cmbGeslacht_SelectedIndexChanged);
             // 
             // lblGeslacht
             // 
             this.lblGeslacht.AutoSize = true;
-            this.lblGeslacht.Location = new System.Drawing.Point(37, 113);
+            this.lblGeslacht.Location = new System.Drawing.Point(56, 174);
+            this.lblGeslacht.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGeslacht.Name = "lblGeslacht";
-            this.lblGeslacht.Size = new System.Drawing.Size(49, 13);
+            this.lblGeslacht.Size = new System.Drawing.Size(73, 20);
             this.lblGeslacht.TabIndex = 9;
             this.lblGeslacht.Text = "Geslacht";
             // 
             // cmbSpecialisatie
             // 
             this.cmbSpecialisatie.FormattingEnabled = true;
-            this.cmbSpecialisatie.Location = new System.Drawing.Point(92, 137);
+            this.cmbSpecialisatie.Location = new System.Drawing.Point(138, 211);
+            this.cmbSpecialisatie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbSpecialisatie.Name = "cmbSpecialisatie";
-            this.cmbSpecialisatie.Size = new System.Drawing.Size(137, 21);
+            this.cmbSpecialisatie.Size = new System.Drawing.Size(204, 28);
             this.cmbSpecialisatie.TabIndex = 4;
+            this.cmbSpecialisatie.SelectedIndexChanged += new System.EventHandler(this.cmbSpecialisatie_SelectedIndexChanged);
             // 
             // lblSpecialisatie
             // 
             this.lblSpecialisatie.AutoSize = true;
-            this.lblSpecialisatie.Location = new System.Drawing.Point(20, 140);
+            this.lblSpecialisatie.Location = new System.Drawing.Point(30, 215);
+            this.lblSpecialisatie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSpecialisatie.Name = "lblSpecialisatie";
-            this.lblSpecialisatie.Size = new System.Drawing.Size(66, 13);
+            this.lblSpecialisatie.Size = new System.Drawing.Size(98, 20);
             this.lblSpecialisatie.TabIndex = 11;
             this.lblSpecialisatie.Text = "Specialisatie";
             // 
             // btnConfirm
             // 
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnConfirm.Location = new System.Drawing.Point(54, 180);
+            this.btnConfirm.Location = new System.Drawing.Point(81, 277);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(112, 35);
             this.btnConfirm.TabIndex = 5;
             this.btnConfirm.Text = "Toevoegen";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -159,18 +178,19 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(135, 180);
+            this.btnCancel.Location = new System.Drawing.Point(202, 277);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 35);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Annuleren";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // FrmEditLid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 218);
+            this.ClientSize = new System.Drawing.Size(381, 335);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lblSpecialisatie);
@@ -185,6 +205,7 @@
             this.Controls.Add(this.lblVoornaam);
             this.Controls.Add(this.txtNummer);
             this.Controls.Add(this.lblNummer);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmEditLid";

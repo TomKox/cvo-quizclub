@@ -22,6 +22,7 @@ namespace CVO_QuizClub
             EditMode = editMode;
             InitializeComponent();
             _lid = null;
+            btnConfirm.Enabled = false;
 
             foreach(Geslacht g in Enum.GetValues(typeof(Geslacht)))
             {
@@ -85,17 +86,23 @@ namespace CVO_QuizClub
             else
             {
                 string nummer = txtNummer.Text;
-                string voornaam = txtVoornaam.Text;
-                string familienaam = txtFamilienaam.Text;
+                string voornaam = txtVoornaam.Text.Trim();
+                string familienaam = txtFamilienaam.Text.Trim();
                 string geboortedatum = txtGeboortedatum.Text;
                 string geslachtString = cmbGeslacht.Text;
                 string specialisatieString = cmbSpecialisatie.Text;
 
-                _lid = new Lid(voornaam, 
-                    familienaam, 
-                    ParseGeslacht(geslachtString),
-                    ParseGeboortedatum(geboortedatum), 
-                    ParseSpecialisatie(specialisatieString));
+                try { 
+                    _lid = new Lid(voornaam, 
+                        familienaam, 
+                        ParseGeslacht(geslachtString),
+                        ParseGeboortedatum(geboortedatum), 
+                        ParseSpecialisatie(specialisatieString));
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -134,6 +141,60 @@ namespace CVO_QuizClub
             }
             return geslacht;
         }
+
+        private void CheckFields()
+        {
+            bool enableButton = true;
+            if (txtVoornaam.Text.Trim() == "") enableButton = false;
+            if (txtFamilienaam.Text.Trim() == "") enableButton = false; 
+
+            try
+            {
+                ParseGeboortedatum(txtGeboortedatum.Text);
+            }
+            catch (Exception ex)
+            {
+                enableButton = false;
+            }
+
+            if (cmbGeslacht.Text == "") enableButton = false;
+            if (cmbSpecialisatie.Text == "") enableButton = false;
+
+            if (enableButton) btnConfirm.Enabled = true;
+            else btnConfirm.Enabled = false;
+        }
+
+        private void txtVoornaam_TextChanged(object sender, EventArgs e)
+        {
+            CheckFields();
+        }
+
+        private void txtFamilienaam_TextChanged(object sender, EventArgs e)
+        {
+            CheckFields();
+        }
+
+        private void txtGeboortedatum_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            CheckFields();
+        }
+
+        private void cmbGeslacht_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckFields();
+        }
+
+        private void cmbSpecialisatie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckFields();
+        }
+
+        private void txtGeboortedatum_TextChanged(object sender, EventArgs e)
+        {
+            CheckFields();
+        }
+
+
 
         //private void lblGeboortedatum_Click(object sender, EventArgs e)
         //{
