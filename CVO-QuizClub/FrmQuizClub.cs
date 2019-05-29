@@ -193,7 +193,7 @@ namespace CVO_QuizClub
                 {
                     MessageBox.Show(ex.Message, "Teamnaam al gebruikt!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
+                SelectedTeam = newTeam;
                 UpdateLijsten();
             }
         }
