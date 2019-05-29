@@ -22,7 +22,7 @@ namespace CVO_QuizClub
             {
                 if(value >= _teller)
                 {
-                    _teller = value + 1;
+                    _teller = value;
                 }
                 _id = value;
             }
@@ -41,7 +41,7 @@ namespace CVO_QuizClub
         public Team(string naam, int id)
         {
             Naam = naam;
-            _id = id;
+            Id = id;
             _teller++;
             _leden = new Lid[4];
         }
