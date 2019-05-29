@@ -64,7 +64,8 @@ namespace CVO_QuizClub
             }
             else
             {
-                lboxLeden.SelectedIndex = 0;
+                if(lboxLeden.Items.Count != 0) 
+                    lboxLeden.SelectedIndex = 0;
             }
 
             if(SelectedTeam != null)
@@ -81,7 +82,8 @@ namespace CVO_QuizClub
             }
             else
             {
-                lboxTeams.SelectedIndex = 0;
+                if(lboxTeams.Items.Count != 0)
+                    lboxTeams.SelectedIndex = 0;
             }
         }
 
