@@ -327,6 +327,7 @@ namespace CVO_QuizClub
             _leden.Clear();
             _teams.Clear();
             Lid.ResetTeller();
+            Team.ResetTeller();
             ReadFromDataFile();
         }
         #endregion

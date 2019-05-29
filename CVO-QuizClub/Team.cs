@@ -10,12 +10,23 @@ namespace CVO_QuizClub
     public class Team
     {
         private readonly Lid[] _leden;
-        private readonly int _id;
+        private int _id;
 
         private static int _teller = 1;
 
         public Lid[] Leden { get => _leden; }
-        public int Id { get => _id; }
+        public int Id
+        {
+            get => _id;
+            set
+            {
+                if(value >= _teller)
+                {
+                    _teller = value + 1;
+                }
+                _id = value;
+            }
+        }
         public string Naam { get; set; }
 
         public static int Teller { get => _teller; }
@@ -86,6 +97,11 @@ namespace CVO_QuizClub
                 }
             }
             return gevonden;
+        }
+
+        public static void ResetTeller()
+        {
+            _teller = 1;
         }
 
         public override string ToString()
