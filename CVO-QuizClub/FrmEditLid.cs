@@ -55,7 +55,6 @@ namespace CVO_QuizClub
             txtNummer.Text = Lid.Nummer.ToString();
             txtVoornaam.Text = Lid.Voornaam;
             txtFamilienaam.Text = Lid.Familienaam;
-            txtGeboortedatum.Text = Lid.Geboortedatum.ToString("d");
             txtGeboortedatum.Text = Lid.Geboortedatum.ToString("dd/MM/yyyy");
             cmbGeslacht.Text = Lid.Geslacht.ToString();
             cmbSpecialisatie.Text = Lid.Specialisatie.GetDescription();
