@@ -150,6 +150,7 @@ namespace CVO_QuizClub
             if (result == DialogResult.OK)
             {
                 SelectedLid = editForm.Lid;
+                SelectedTeam = (Team)lboxTeams.SelectedItem;
                 lboxLeden.SelectedItem = editLid;
                 UpdateLijsten();
             }
@@ -211,6 +212,7 @@ namespace CVO_QuizClub
             if (result == DialogResult.OK)
             {
                 SelectedTeam = editForm.Team;
+                SelectedLid = (Lid)lboxLeden.SelectedItem; 
                 lboxTeams.SelectedItem = editTeam;
                 UpdateLijsten();
             }
@@ -229,6 +231,7 @@ namespace CVO_QuizClub
             {
                 DataModel.TeamVerwijderen(team);
                 SelectedTeam = null;
+                SelectedLid = (Lid)lboxLeden.SelectedItem;
                 ClearTeamFields();
                 UpdateLijsten();
             }
