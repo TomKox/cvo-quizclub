@@ -104,6 +104,14 @@ namespace CVO_QuizClub
             {
                 MessageBox.Show(ex.Message, "Team volzet!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (TeamOnbekendException ex)
+            {
+                MessageBox.Show(ex.Message, "Geen team geselecteerd!", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
+            catch (LidOnbekendException ex)
+            {
+                MessageBox.Show(ex.Message, "Geen lid geselecteerd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             UpdateLijsten();
         }
@@ -142,6 +150,7 @@ namespace CVO_QuizClub
         private void LidBewerken()
         {
             Lid editLid = (Lid)lboxLeden.SelectedItem;
+            if (editLid == null) return; // Stoppen indien niets geselecteerd.
             FrmEditLid editForm = new FrmEditLid(editLid);
 
             DialogResult result = editForm.ShowDialog(this);
@@ -156,6 +165,7 @@ namespace CVO_QuizClub
         private void LidVerwijderen()
         {
             Lid lid = (Lid)lboxLeden.SelectedItem;
+            if (lid == null) return; // Stoppen indien geen lid geselecteerd.
             string message = $"Lid '{lid.VolledigeNaam}' ({lid.Nummer}) zal verwijderd worden." + Environment.NewLine
                 + "Wilt u hiermee doorgaan?";
             DialogResult result = MessageBox.Show(
@@ -174,6 +184,7 @@ namespace CVO_QuizClub
                     MessageBox.Show(errorMessage, "Kan lid niet verwijderen!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 SelectedLid = null;
+                ClearLidFields();
                 UpdateLijsten();
             }
         }
@@ -201,6 +212,7 @@ namespace CVO_QuizClub
         private void TeamBewerken()
         {
             Team editTeam = (Team)lboxTeams.SelectedItem;
+            if (editTeam == null) return; // Stoppen indien niets geselecteerd.
             FrmEditTeam editForm = new FrmEditTeam(editTeam);
             DialogResult result = editForm.ShowDialog(this);
             if (result == DialogResult.OK)
@@ -214,6 +226,7 @@ namespace CVO_QuizClub
         private void TeamVerwijderen()
         {
             Team team = (Team)lboxTeams.SelectedItem;
+            if (team == null) return; // Stoppen indien geen team geselecteerd.
             string message = $"Team '{team.Naam}' ({team.Id}) zal verwijderd worden." + Environment.NewLine
                 + "Wilt u hiermee doorgaan?";
             DialogResult result = MessageBox.Show(
@@ -223,8 +236,24 @@ namespace CVO_QuizClub
             {
                 DataModel.TeamVerwijderen(team);
                 SelectedTeam = null;
+                ClearTeamFields();
                 UpdateLijsten();
             }
+        }
+
+        private void ClearTeamFields()
+        {
+            txtTeamId.Text = "";
+            txtTeamNaam.Text = "";
+            lboxTeamLeden.Items.Clear();
+        }
+
+        private void ClearLidFields()
+        {
+            txtLidLeeftijd.Text = "";
+            txtLidNaam.Text = "";
+            txtLidNummer.Text = "";
+            txtLidSpecialisatie.Text = "";
         }
 
         private void ShowInfo()

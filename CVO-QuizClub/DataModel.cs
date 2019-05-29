@@ -290,11 +290,19 @@ namespace CVO_QuizClub
             }
             else
             {
-                if(!Leden.Contains(lid))
+                if(lid==null)
+                {
+                    throw new LidOnbekendException("Geen lid geselecteerd.");
+                }
+                else if(!Leden.Contains(lid))
                 {
                     throw new LidOnbekendException(lid);
                 }
-                if(!Teams.Contains(team))
+                if(team==null)
+                {
+                    throw new TeamOnbekendException("Geen team geselecteerd.");
+                }
+                else if(!Teams.Contains(team))
                 {
                     throw new TeamOnbekendException(team);
                 }
