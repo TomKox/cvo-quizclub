@@ -311,8 +311,10 @@ namespace CVO_QuizClub
                 return;
 
             int index = lboxLeden.IndexFromPoint(e.X, e.Y);
-            Lid lid = (Lid)lboxLeden.Items[index];
-            DragDropEffects dde1 = DoDragDrop(lid, DragDropEffects.Copy);
+            if(index >= 0) { 
+                Lid lid = (Lid)lboxLeden.Items[index];
+                DragDropEffects dde1 = DoDragDrop(lid, DragDropEffects.Copy);
+            }
 
             //if (dde1 == DragDropEffects.All)
             //{
