@@ -63,6 +63,7 @@
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(167, 20);
             this.txtNaam.TabIndex = 7;
+            this.txtNaam.TextChanged += new System.EventHandler(this.txtNaam_TextChanged);
             // 
             // lblNaam
             // 

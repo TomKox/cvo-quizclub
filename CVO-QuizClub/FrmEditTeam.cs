@@ -14,6 +14,7 @@ namespace CVO_QuizClub
         {
             _team = null;
             InitializeComponent();
+            btnConfirm.Enabled = false;
             EditMode = editMode;
 
             if (EditMode)
@@ -61,6 +62,18 @@ namespace CVO_QuizClub
             else
             {
                 _team = new Team(naam);
+            }
+        }
+
+        private void txtNaam_TextChanged(object sender, EventArgs e)
+        {
+            if(txtNaam.Text.Trim() != null)
+            {
+                btnConfirm.Enabled = true;
+            }
+            else
+            {
+                btnConfirm.Enabled = false;
             }
         }
     }
