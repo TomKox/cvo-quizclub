@@ -39,10 +39,9 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(234, 132);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancel.Location = new System.Drawing.Point(156, 86);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 35);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Annuleren";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -50,10 +49,9 @@
             // btnConfirm
             // 
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnConfirm.Location = new System.Drawing.Point(113, 132);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConfirm.Location = new System.Drawing.Point(75, 86);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(112, 35);
+            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
             this.btnConfirm.TabIndex = 11;
             this.btnConfirm.Text = "Toevoegen";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -61,53 +59,51 @@
             // 
             // txtNaam
             // 
-            this.txtNaam.Location = new System.Drawing.Point(113, 60);
-            this.txtNaam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNaam.Location = new System.Drawing.Point(75, 39);
             this.txtNaam.Name = "txtNaam";
-            this.txtNaam.Size = new System.Drawing.Size(249, 26);
+            this.txtNaam.Size = new System.Drawing.Size(167, 20);
             this.txtNaam.TabIndex = 7;
             // 
             // lblNaam
             // 
             this.lblNaam.AutoSize = true;
-            this.lblNaam.Location = new System.Drawing.Point(54, 63);
-            this.lblNaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNaam.Location = new System.Drawing.Point(36, 41);
             this.lblNaam.Name = "lblNaam";
-            this.lblNaam.Size = new System.Drawing.Size(51, 20);
+            this.lblNaam.Size = new System.Drawing.Size(35, 13);
             this.lblNaam.TabIndex = 10;
             this.lblNaam.Text = "Naam";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(113, 20);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtId.Location = new System.Drawing.Point(75, 13);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(85, 26);
+            this.txtId.Size = new System.Drawing.Size(58, 20);
             this.txtId.TabIndex = 9;
             this.txtId.TabStop = false;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(79, 23);
-            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Location = new System.Drawing.Point(53, 15);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(26, 20);
+            this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 8;
             this.lblId.Text = "ID";
             // 
             // FrmEditTeam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.btnConfirm;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 222);
+            this.ClientSize = new System.Drawing.Size(309, 144);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtNaam);
             this.Controls.Add(this.lblNaam);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmEditTeam";
             this.Text = "FrmEditTeam";
             this.ResumeLayout(false);
