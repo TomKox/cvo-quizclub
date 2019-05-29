@@ -193,12 +193,5 @@ namespace CVO_QuizClub
         {
             CheckFields();
         }
-
-
-
-        //private void lblGeboortedatum_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }

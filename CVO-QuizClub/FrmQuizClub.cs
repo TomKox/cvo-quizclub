@@ -89,8 +89,6 @@ namespace CVO_QuizClub
 
         private void TeamlidToevoegen()
         {
-            //Lid lid = (Lid)lboxLeden.SelectedItem;
-            //Team team = (Team)lboxTeams.SelectedItem;
             SelectedLid = (Lid)lboxLeden.SelectedItem;
             SelectedTeam = (Team)lboxTeams.SelectedItem;
 
@@ -284,11 +282,6 @@ namespace CVO_QuizClub
 
         private void lboxTeams_SelectedValueChanged(object sender, EventArgs e)
         {
-            //txtLidNaam.Text = selectie.VolledigeNaam;
-            //txtLidSpecialisatie.Text = selectie.Specialisatie.GetDescription();
-            //txtLidNummer.Text = selectie.Nummer.ToString();
-            //txtLidLeeftijd.Text = selectie.Leeftijd.ToString();
-
             Team selectie = (Team)lboxTeams.SelectedItem;
             txtTeamNaam.Text = selectie.Naam;
             txtTeamId.Text = selectie.Id.ToString();
@@ -315,11 +308,6 @@ namespace CVO_QuizClub
                 Lid lid = (Lid)lboxLeden.Items[index];
                 DragDropEffects dde1 = DoDragDrop(lid, DragDropEffects.Copy);
             }
-
-            //if (dde1 == DragDropEffects.All)
-            //{
-            //    lboxLeden.Items.RemoveAt(lboxLeden.IndexFromPoint(e.X, e.Y));
-            //}
         }
         
         private void lboxTeamLeden_DragOver(object sender, DragEventArgs e)
