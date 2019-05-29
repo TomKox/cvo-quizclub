@@ -7,6 +7,12 @@ using System.Text;
 
 namespace CVO_QuizClub
 {
+    /* DataModel is verantwoordelijk voor alle leden, teams en de
+     * onderlinge relaties tussen beide.Alle bewerkingen in de GUI
+     * van de leden en de teams van de quizvereniging verlopen via DataModel.
+     * DataModel houdt automatisch alle wijziging bij in het bestand
+     * DataFile. 
+     */
     public class DataModel
     {
         private readonly List<Lid> _leden;

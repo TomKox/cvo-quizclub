@@ -71,8 +71,8 @@
             this.lidBewerkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lidVerwijderenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lidToevoegenAanTeamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.nieuwLidToevoegenAanTeamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.nieuwTeamAanmakenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamBewerkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamVerwijderenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -470,14 +470,14 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // afsluitenToolStripMenuItem
             // 
             this.afsluitenToolStripMenuItem.Name = "afsluitenToolStripMenuItem";
-            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.afsluitenToolStripMenuItem.Text = "Afsluiten";
             this.afsluitenToolStripMenuItem.Click += new System.EventHandler(this.afsluitenToolStripMenuItem_Click);
             // 
@@ -526,17 +526,17 @@
             this.lidToevoegenAanTeamToolStripMenuItem.Text = "Lid toevoegen aan team";
             this.lidToevoegenAanTeamToolStripMenuItem.Click += new System.EventHandler(this.lidToevoegenAanTeamToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(232, 6);
-            // 
             // nieuwLidToevoegenAanTeamToolStripMenuItem
             // 
             this.nieuwLidToevoegenAanTeamToolStripMenuItem.Name = "nieuwLidToevoegenAanTeamToolStripMenuItem";
             this.nieuwLidToevoegenAanTeamToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.nieuwLidToevoegenAanTeamToolStripMenuItem.Text = "Nieuw lid toevoegen aan team";
             this.nieuwLidToevoegenAanTeamToolStripMenuItem.Click += new System.EventHandler(this.nieuwLidToevoegenAanTeamToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(232, 6);
             // 
             // nieuwTeamAanmakenToolStripMenuItem
             // 
