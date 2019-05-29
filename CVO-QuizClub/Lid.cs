@@ -21,7 +21,20 @@ namespace CVO_QuizClub
     public class Lid : Persoon
     {
         private static int _teller = 1;
-        public int Nummer { get; set; }
+        private int _nummer;
+        public int Nummer
+        {
+            get => _nummer;
+            set
+            {
+                if (value >= _teller)
+                {
+                    _teller = value+1;
+                }
+                _nummer = value;
+            }
+                
+        }
         public Specialisatie Specialisatie { get; set; }
         public static int Teller { get { return _teller; } }
 
