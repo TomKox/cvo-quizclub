@@ -177,11 +177,11 @@ namespace CVO_QuizClub
         private string LidToDataLine(Lid lid)
         {
             string nummer = lid.Nummer.ToString();
-            string voornaam = lid.Voornaam;
-            string familienaam = lid.Familienaam;
+            string voornaam = Sanitize(lid.Voornaam);
+            string familienaam = Sanitize(lid.Familienaam);
             string geslacht = lid.Geslacht.ToString();
-            string geboortedatum = lid.Geboortedatum.ToString("d");
-            string specialisatie = lid.Specialisatie.GetDescription();
+            string geboortedatum = lid.Geboortedatum.ToString("dd/MM/yyyy");
+            string specialisatie = Sanitize(lid.Specialisatie.GetDescription());
 
             return $"{LidPrefix}{nummer};{voornaam};{familienaam};{geslacht};{geboortedatum};{specialisatie}";
         }
@@ -190,7 +190,7 @@ namespace CVO_QuizClub
         {
             Lid[] leden = team.Leden;
             string id = team.Id.ToString();
-            string naam = team.Naam;
+            string naam = Sanitize(team.Naam);
             string lid0 = "";
             string lid1 = "";
             string lid2 = "";
@@ -202,6 +202,13 @@ namespace CVO_QuizClub
             if (leden[3] != null) lid3 = leden[3].Nummer.ToString();
             
             return $"{TeamPrefix}{id};{naam};{lid0};{lid1};{lid2};{lid3}";
+        }
+
+        // Verwijder ';' uit strings en vervang door ','
+        // (';' wordt als separator in datafile gebruikt.)
+        private string Sanitize(string s)
+        {
+            return s.Replace(';', ',');
         }
 
         private Lid GetLidFromNummer(int nummer)
