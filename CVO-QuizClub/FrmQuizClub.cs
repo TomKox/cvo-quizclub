@@ -303,6 +303,8 @@ namespace CVO_QuizClub
 
         private void lboxLeden_MouseDown(object sender, MouseEventArgs e)
         {
+            lboxLeden_SelectedValueChanged(sender, e);
+
             if (lboxLeden.Items.Count == 0)
                 return;
 
