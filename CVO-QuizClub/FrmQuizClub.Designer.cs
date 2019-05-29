@@ -465,20 +465,22 @@
             this.afsluitenToolStripMenuItem});
             this.applicatieToolStripMenuItem.Name = "applicatieToolStripMenuItem";
             this.applicatieToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.applicatieToolStripMenuItem.Text = "Applicatie";
+            this.applicatieToolStripMenuItem.Text = "&Applicatie";
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.infoToolStripMenuItem.Text = "&Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // afsluitenToolStripMenuItem
             // 
             this.afsluitenToolStripMenuItem.Name = "afsluitenToolStripMenuItem";
-            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.afsluitenToolStripMenuItem.Text = "Afsluiten";
+            this.afsluitenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.afsluitenToolStripMenuItem.Text = "&Afsluiten";
             this.afsluitenToolStripMenuItem.Click += new System.EventHandler(this.afsluitenToolStripMenuItem_Click);
             // 
             // bewerkenToolStripMenuItem
@@ -496,27 +498,28 @@
             this.teamlidVerwijderenUitTeamToolStripMenuItem});
             this.bewerkenToolStripMenuItem.Name = "bewerkenToolStripMenuItem";
             this.bewerkenToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.bewerkenToolStripMenuItem.Text = "Bewerken";
+            this.bewerkenToolStripMenuItem.Text = "&Bewerken";
             // 
             // nieuwLidAanmakenToolStripMenuItem
             // 
             this.nieuwLidAanmakenToolStripMenuItem.Name = "nieuwLidAanmakenToolStripMenuItem";
-            this.nieuwLidAanmakenToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.nieuwLidAanmakenToolStripMenuItem.Text = "Nieuw lid aanmaken";
+            this.nieuwLidAanmakenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.nieuwLidAanmakenToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.nieuwLidAanmakenToolStripMenuItem.Text = "Nieuw &lid aanmaken";
             this.nieuwLidAanmakenToolStripMenuItem.Click += new System.EventHandler(this.nieuwLidAanmakenToolStripMenuItem_Click);
             // 
             // lidBewerkenToolStripMenuItem
             // 
             this.lidBewerkenToolStripMenuItem.Name = "lidBewerkenToolStripMenuItem";
-            this.lidBewerkenToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.lidBewerkenToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.lidBewerkenToolStripMenuItem.Text = "Lid bewerken";
             this.lidBewerkenToolStripMenuItem.Click += new System.EventHandler(this.lidBewerkenToolStripMenuItem_Click);
             // 
             // lidVerwijderenToolStripMenuItem
             // 
             this.lidVerwijderenToolStripMenuItem.Name = "lidVerwijderenToolStripMenuItem";
-            this.lidVerwijderenToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.lidVerwijderenToolStripMenuItem.Text = "Lid verwijderen";
+            this.lidVerwijderenToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.lidVerwijderenToolStripMenuItem.Text = "Lid &verwijderen";
             this.lidVerwijderenToolStripMenuItem.Click += new System.EventHandler(this.lidVerwijderenToolStripMenuItem_Click);
             // 
             // lidToevoegenAanTeamToolStripMenuItem
@@ -541,8 +544,9 @@
             // nieuwTeamAanmakenToolStripMenuItem
             // 
             this.nieuwTeamAanmakenToolStripMenuItem.Name = "nieuwTeamAanmakenToolStripMenuItem";
-            this.nieuwTeamAanmakenToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.nieuwTeamAanmakenToolStripMenuItem.Text = "Nieuw team aanmaken";
+            this.nieuwTeamAanmakenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.nieuwTeamAanmakenToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.nieuwTeamAanmakenToolStripMenuItem.Text = "Nieuw &team aanmaken";
             this.nieuwTeamAanmakenToolStripMenuItem.Click += new System.EventHandler(this.nieuwTeamAanmakenToolStripMenuItem_Click);
             // 
             // teamBewerkenToolStripMenuItem
