@@ -163,7 +163,16 @@ namespace CVO_QuizClub
 
             if (result == DialogResult.Yes)
             {
-                DataModel.LidVerwijderen(lid);
+                try
+                {
+                    DataModel.LidVerwijderen(lid);
+                }
+                catch (LidVerwijderenException ex)
+                {
+                    string errorMessage = ex.Message + Environment.NewLine
+                        + "Verwijderen het teamlid uit deze teams en probeer opnieuw.";
+                    MessageBox.Show(errorMessage, "Kan lid niet verwijderen!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 SelectedLid = null;
                 UpdateLijsten();
             }

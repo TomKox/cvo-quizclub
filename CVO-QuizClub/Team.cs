@@ -74,6 +74,20 @@ namespace CVO_QuizClub
             return verwijderd;
         }
 
+        public bool IsLid(Lid lid)
+        {
+            bool gevonden = false;
+            foreach(Lid teamlid in _leden)
+            {
+                if(teamlid != null && lid.Nummer == teamlid.Nummer)
+                {
+                    gevonden = true;
+                    break;
+                }
+            }
+            return gevonden;
+        }
+
         public override string ToString()
         {
             //StringBuilder teamleden = new StringBuilder();

@@ -222,9 +222,32 @@ namespace CVO_QuizClub
 
         public void LidVerwijderen(Lid lid)
         {
+            List<string> lidInTeams = new List<string>();
             if(_leden.Contains(lid))
             {
-                _leden.Remove(lid);
+                foreach(Team team in _teams)
+                {
+                    if(team.IsLid(lid))
+                    {
+                        lidInTeams.Add($"{team.Naam} ({team.Id})");
+                    }
+                }
+
+                if (lidInTeams.Count > 0)
+                {
+                    StringBuilder message = new StringBuilder("Het lid kan niet verwijderd worden, omdat het teamlid is bij volgende teams:"
+                        + Environment.NewLine);
+                    foreach(string s in lidInTeams)
+                    {
+                        message.Append(s + Environment.NewLine);
+                    }
+                    throw new LidVerwijderenException(message.ToString());
+
+                }
+                else
+                {
+                    _leden.Remove(lid);
+                }
             }
             else
             {
