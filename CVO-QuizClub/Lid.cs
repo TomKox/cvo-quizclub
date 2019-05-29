@@ -44,6 +44,11 @@ namespace CVO_QuizClub
             Nummer = _teller++;
         }
 
+        public Lid(Persoon persoon, Specialisatie specialisatie) : base(persoon.Voornaam, persoon.Familienaam, persoon.Geslacht, persoon.Geboortedatum)
+        {
+            Specialisatie = specialisatie;
+        }
+
         public override string ToString()
         {
             return $"{base.ToString()} ({Specialisatie.GetDescription()})" ;
